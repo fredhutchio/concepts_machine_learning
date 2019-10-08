@@ -8,9 +8,9 @@ This four week course is designed to introduce attendees to central concepts in 
 
 ## Schedule
 
-- Week 1: Introduction and Conceptual Overview; Machine Learning and Experimental Design
-- Week 2: Case Study in Classification
-- Week 3: Case Study in Regression
+- Week 1: Intro and Conceptual Overview; Machine Learning and Experimental Design
+- Week 2: Case Study in Regression
+- Week 3: Case Study in Classification
 - Week 4: Case Study in Deep Learning and Transfer Learning
 
 ## Resources
