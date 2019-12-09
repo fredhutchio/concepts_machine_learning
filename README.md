@@ -21,3 +21,6 @@ supplemental exercises for practice
 * `solutions/` includes the solutions for all files in `exercises/`
 * `instructors.md` includes information for instructors to facilitate teaching each lesson
 * `hackmdio.md` is an archive of the [interactive webpage](https://hackmd.io) used during lessons
+
+Much of the material for these lessons has been adapted from these sources as well as those referenced in specific files:
+* [An Introduction to Statistical Learning with Applications in R](http://www.statlearning.com/)
