@@ -1,6 +1,6 @@
 A file to keep notes on reorg of concepts course. Can be deleted once the course is finalized.
 ---
-## TA course objectives
+## TA Class objectives
 
 * Class 1: Introduction and Conceptual Overview; Machine Learning and Experimental Design
   * Machine Learning and Data Science - Have working definitions & understand their essential connection
@@ -45,3 +45,15 @@ A file to keep notes on reorg of concepts course. Can be deleted once the course
   * Recognize the implications with regards to algorithms relying on “closeness” metrics
   * Principal Component Analysis (PCA) - Understand the main purpose, mechanism, and drawbacks of PCA
   * Transfer Learning - Recognize the central goal of transfer learning
+  
+  ---
+  
+# LW Course Objectives
+  
+By the end of this course you should be able to:
+
+* Identify question's that are and are not appropriate applications of machine learning
+* Understand the importance of exploratory data analysis, experiemental design, and data collection to applying machine learning algorithms
+* Recognize the four main paradigms of machine learning
+* Differentiate between supervised and unsupervised ML methods and applications
+* Recognize and have a basic understanding of common approaches to supervised (regression, classification) and unsupervised (clustering, dimensionality reduction) machine learning.
