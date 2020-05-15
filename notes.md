@@ -57,3 +57,28 @@ By the end of this course you should be able to:
 * Recognize the four main paradigms of machine learning
 * Differentiate between supervised and unsupervised ML methods and applications
 * Recognize and have a basic understanding of common approaches to supervised (regression, classification) and unsupervised (clustering, dimensionality reduction) machine learning.
+
+# LW Class Objectives
+
+By the end of this class you should be able to:
+
+Class 1: Introduction to machine learning concepts
+* Define machine learning
+* Recognize the four paradigms of machine learning
+* Understand basic terminology like alogrithm, inputs, outputs, supervised, unsupervised
+* Differentiate between unsupervised and supervised ml
+Class 2: Supervised machine learning
+* 
+*
+*
+*
+Class 3: Unsupervised machine learning
+* 
+*
+*
+*
+* Class 4: Experimental design and EDA in ML
+* 
+*
+*
+*
