@@ -67,18 +67,20 @@ Class 1: Introduction to machine learning concepts
 * Recognize the four paradigms of machine learning
 * Understand basic terminology like alogrithm, inputs, outputs, supervised, unsupervised
 * Differentiate between unsupervised and supervised ml
+
 Class 2: Supervised machine learning
-* 
-*
-*
-*
+* Define supervised learning
+* Differentiate between regression and classification
+* Assess whether or not supervised learning is an appropriate tool for a question
+* Understand basic applications of supervised learning (linear regression, 
+
 Class 3: Unsupervised machine learning
-* 
-*
-*
-*
-* Class 4: Experimental design and EDA in ML
-* 
-*
-*
+* Define unsupervised learning
+* Differentiate between dimensionality reduction and clustering
+* Assess whether or not unsupervised learning is an appropriate tool for a question
+* Understand basic applications of unsupervised learning (PCA, Kmeans)
+
+Class 4: Experimental design and EDA in ML
+* Understand the importance of exploratory data analysis and visualization to machine learning
+* Recognize key steps to exploratory data analysis
 *
