@@ -83,4 +83,4 @@ Class 3: Unsupervised machine learning
 Class 4: Experimental design and EDA in ML
 * Understand the importance of exploratory data analysis and visualization to machine learning
 * Recognize key steps to exploratory data analysis
-*
+* Understand ethical concerns with machine learning applications
