@@ -52,8 +52,8 @@ A file to keep notes on reorg of concepts course. Can be deleted once the course
   
 By the end of this course you should be able to:
 
-* Identify question's that are and are not appropriate applications of machine learning
-* Understand the importance of exploratory data analysis, experiemental design, and data collection to applying machine learning algorithms
+* Identify questions that are and are not appropriate applications of machine learning
+* Understand the importance of exploratory data analysis, experimental design, and data collection to applying machine learning algorithms
 * Recognize the four main paradigms of machine learning
 * Differentiate between supervised and unsupervised ML methods and applications
 * Recognize and have a basic understanding of common approaches to supervised (regression, classification) and unsupervised (clustering, dimensionality reduction) machine learning.
