@@ -23,13 +23,12 @@ Welcome to Concepts in Machine Learning from fredhutch.io! This course is design
 
 This course will introduce you to machine learning and give a broad overview of supervised and unsupervised machine learning. The goal of this course is to provide some conceptual background for our Machine Learning in R and Python series. Further, researchers who complete this course should have an understanding of how machine learning can be applied in biology research.
 
-By the end of this course you should be able to:
+By the end of this class you should be able to:
 
-* Identify questions that are and are not appropriate applications of machine learning
-* Understand the importance of exploratory data analysis, experimental design, and data collection to applying machine learning algorithms
-* Recognize the four main paradigms of machine learning
-* Differentiate between supervised and unsupervised ML methods and applications
-* Recognize and have a basic understanding of common approaches to supervised (regression, classification) and unsupervised (clustering, dimensionality reduction) machine learning.
+* Define machine learning
+* Recognize the four paradigms of machine learning
+* Understand basic terminology like algorithm, inputs, outputs, supervised, unsupervised
+* Differentiate between unsupervised and supervised ml
 
 ### What **isn't** machine learning?
 
@@ -91,7 +90,7 @@ When we think of machine learning and how it applies to code we can consider mac
 
 ### When to use machine learning
 
-Just like any other statistical method there are specific situations where applying machine learning is appropriate. 
+Just like any other statistical method there are specific situations where applying machine learning is appropriate. Just as important as the algorithm itself is a solid understanding of experimental design, domain expertise in the problem area youre trying to solve, and an understanding of data governance and ethics.
 
 You cannot code the rules: 
 * Tasks that cannot be solved using a simple, rule-based solution. 
@@ -114,3 +113,60 @@ Biology is suited for machine learning applications:
     * Our human brains cannot make sense of these huge integrated datasets or even just one of them.
     * Example: a human looking at a series of bases would take years to make sense of the human genome. A computer can find patterns in our genome with relative ease.
 
+### How is machine learning applied?
+
+Machine learning applications are all around us! Every time Spotify serves up a customized playlist or radio station based on the music that you like, Facebook loads your newsfeed, your phone autocorrects you, or you interact with a voice assitant like Siri, you are interacting with machine learning algorithms.
+
+Every-day applications:
+* Search engines
+* Recommendation systems (Yelp, Netflix, Spotify)
+* Voice assistants
+* Social media feeds
+* Text prediction
+
+#### Machine learning techniques are becoming increasingly important to biological research.
+
+Researchers are developing algorithms that use machine learning to classify histopathological images, visualize and find clusters within single cell datasets, and much more.
+
+Biology specific applications:
+* Automated gating for single cell mass and flow cytometry
+* Visualization and clustering of single-cell RNA sequencing data
+* Classification of histopathological images of breast tissue to identify malignant tumors
+
+Work happening here at Fred Hutch
+Gottardo lab - automatic gating for flow cytometry data (FAUST)
+Emily Silgards Data Science group - use natural language processing to extract information from electronic medical records
+Michael Zager’s group - single cell visualization and clustering using methods like tSNE
+
+### How do these machine learning applications work?
+
+There are different types of machine learning that each have their own specific applications, requirements, and interpretations.
+
+Four major paradigms in machine learning:
+* **Supervised**
+* **Unsupervised**
+* Semi-supervised
+* Reinforcement learning
+
+We will discuss supervised vs unsupervised machine learning going forward, but it’s good to be aware that these are not the only types of ml.
+
+### Anatomy of a machine learning algorithm
+discuss inputs and outputs
+
+### An overview of supervised learning
+
+#### Example supervised learning questions
+
+### The two steps of supervised learning: training and testing
+
+### An overview of unsupervised learning
+
+#### Example unsupervised learning questions
+
+### One step to unsupervised learning: fitting
+
+### Review!
+
+### Next week: supervised machine learning
+
+### Reading material
