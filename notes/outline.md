@@ -150,7 +150,7 @@ Four major paradigms in machine learning:
 
 We will discuss supervised vs unsupervised machine learning going forward, but it’s good to be aware that these are not the only types of ml.
 
-### Anatomy of a machine learning algorithm
+### Anatomy of a machine learning problem
 discuss inputs and outputs
 
 ### An overview of supervised learning
@@ -170,3 +170,33 @@ discuss inputs and outputs
 ### Next week: supervised machine learning
 
 ### Reading material
+
+---
+
+## Concepts in Machine Learning Class 2: Supervised Learning
+
+### Objectives
+
+Welcome to class 2 of Concepts in Machine Learning!
+
+By the end of this class you should be able to:
+
+* Define supervised learning
+* Differentiate between regression and classification
+* Assess whether or not supervised learning is an appropriate tool for a question
+* Understand basic applications of supervised learning (linear regression, logistic regression)
+
+### Review! What is machine learning?
+
+### Review! Supervised vs unsupervised machine learning
+
+### Review! Anatomy of a machine learning problem
+
+### What is supervised machine learning?
+
+### When to use supervised machine learning
+
+### Classification
+
+### Regression
+
