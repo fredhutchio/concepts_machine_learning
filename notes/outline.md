@@ -15,6 +15,8 @@ By the end of this course you should be able to:
 * Recognize and have a basic understanding of common approaches to supervised (regression, classification) and unsupervised (clustering, dimensionality reduction) machine learning.
 * Identify biology research areas where machine learning can be applied.
 
+---
+
 ## Concepts in Machine Learning Class 1: Introduction to Machine Learning
 
 ### Objectives
@@ -75,8 +77,10 @@ Let's look at how machine learning is defined.
 
 * A kind of algorithm
   * A finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation (Wikipedia)
+  * Essentially a protocol for a computer
 * Incorporates data into a statistical model
 * Improves with experience without human intervention
+
 
 ### Machine learning as code
 
@@ -99,6 +103,11 @@ You cannot code the rules:
 
 You cannot scale:
 * You might be able to manually recognize a few hundred emails and decide whether they are spam or not. However, this task becomes tedious for millions of emails. ML solutions are effective at handling large-scale problems.
+
+#### Challenge!
+
+1. Write an algorithm/protocol/ruleset for making a PBJ sandwich
+2. Write an algorithm/protocol/ruleset for determining if an email is spam
 
 ### Biology is suited for machine learning
 
@@ -140,7 +149,7 @@ Michael Zager’s group - single cell visualization and clustering using methods
 
 ### How do these machine learning applications work?
 
-There are different types of machine learning that each have their own specific applications, requirements, and interpretations.
+There are different types of machine learning and each have their own specific applications and requirements.
 
 Four major paradigms in machine learning:
 * **Supervised**
@@ -148,12 +157,15 @@ Four major paradigms in machine learning:
 * Semi-supervised
 * Reinforcement learning
 
-We will discuss supervised vs unsupervised machine learning going forward, but it’s good to be aware that these are not the only types of ml.
+The focus of this course will be on supervised and unsupervised learning, but it’s good to be aware that these are not the only types of ml.
 
 ### Anatomy of a machine learning problem
 discuss inputs and outputs
 
+dataset, features - really break down how a dataset doesn't capture the entirety of The Truth only the features we have collected.
+
 ### An overview of supervised learning
+emphasize - labled data, concrete interpretations, 2 steps, 2 subclasses, used to make predictions
 
 #### Example supervised learning questions
 
@@ -185,18 +197,65 @@ By the end of this class you should be able to:
 * Differentiate between regression and classification
 * Assess whether or not supervised learning is an appropriate tool for a question
 * Understand basic applications of supervised learning (linear regression, logistic regression)
+* Understand what bias-variance trade off and overfitting are
 
 ### Review! What is machine learning?
 
-### Review! Supervised vs unsupervised machine learning
-
 ### Review! Anatomy of a machine learning problem
 
+### Review! Supervised vs unsupervised machine learning
+
 ### What is supervised machine learning?
+
+### How do you train a machine?
+* illustrate training / testing with some clear examples ("show a computer thousands of images of hand drawn numbers with the labels containing the correct integer")
 
 ### When to use supervised machine learning
 
 ### Classification
 
+* Assign a value
+* Emphasize necessity of having a 'teacher' - labeled features are what the machine uses to learn how to classify
+* Decision trees, support vector machine
+* example use cases
+ * classic: dog vs cat
+
+### False-positives and false-negatives
+
 ### Regression
+
+* Predict a continuous numerical value
+* point out that logistic regression is actually a classification method
+* linear/polynomial regression
+* example use cases
+ * classic: predicting income
+
+### Bias-variance trade off
+* Bias is the amount of error introduced by approximating real-world phenomena with a simplified model.
+* Variance is how much your model's test error changes based on variation in the training data. It reflects the model's sensitivity to the idiosyncrasies of the data set it was trained on.
+* As a model increases in complexity and it becomes more wiggly (flexible), its bias decreases (it does a good job of explaining the training data), but variance increases (it doesn't generalize as well). Ultimately, in order to have a good model, you need one with low bias and low variance.
+
+### How to mitigate overfitting
+
+1. More training data
+2. 
+
+### Evaluating a supervised learning model
+
+Loss functions
+
+### Practice with problem statements
+Use Ted Lederas cvd dataset variables to construct a problem statement. One classification and one regression.
+
+### Review! When to use supervised machine learning
+
+### Review! Regression vs classification
+
+### Review! Bias-variance trade off
+
+### Review! Evaluating a supervised machine learning model
+
+### Next week: Unsupervised learning
+
+### Reading materials
 
