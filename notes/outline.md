@@ -198,6 +198,8 @@ By the end of this class you should be able to:
 * Assess whether or not supervised learning is an appropriate tool for a question
 * Understand basic applications of supervised learning (linear regression, logistic regression)
 * Understand what bias-variance trade off and overfitting are
+* Create supervised learning problem statements
+
 
 ### Review! What is machine learning?
 
@@ -259,3 +261,34 @@ Use Ted Lederas cvd dataset variables to construct a problem statement. One clas
 
 ### Reading materials
 
+---
+
+## Concepts in Machine Learning Class 3: Unsupervised Learning
+
+### Objectives
+
+Welcome to class 2 of Concepts in Machine Learning!
+
+By the end of this class you should be able to:
+
+* Define unsupervised learning
+* Differentiate between dimensionality reduction and clustering
+* Assess whether or not unsupervised learning is an appropriate tool for a question
+* Understand basic applications of unsupervised learning (PCA, Kmeans)
+* Create unsupervised learning problem statements
+
+### Review! What is machine learning?
+
+### Review! Unsupervised vs unsupervised machine learning
+
+### What is unsupervised machine learning?
+
+### When to use unsupervised learning?
+
+### What is fitting?
+
+### Clustering
+
+### The curse of dimensionality
+
+### Dimensionality reduction
