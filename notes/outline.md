@@ -8,12 +8,11 @@ This course consists of four one hour classes and covers the basic concepts of c
 
 By the end of this course you should be able to:
 
-* Identify questions that are and are not appropriate applications of machine learning
-* Understand the importance of exploratory data analysis, experimental design, and data collection to applying machine learning algorithms
-* Recognize the four main paradigms of machine learning
-* Differentiate between supervised and unsupervised ML methods and applications
+* Identify how machine learning can be applied in biology research and form a problem statement.
+* Apply the concepts of exploratory data analysis, experimental design, and ethics machine learning.
+* Recognize the four main paradigms of machine learning as supervised, unsupervised, semi-supervised, and reinforcement learning.
+* Differentiate between common approaches and methods for supervised and unsupervised machine learning.
 * Recognize and have a basic understanding of common approaches to supervised (regression, classification) and unsupervised (clustering, dimensionality reduction) machine learning.
-* Identify biology research areas where machine learning can be applied.
 
 ---
 
@@ -27,10 +26,9 @@ This course will introduce you to machine learning and give a broad overview of 
 
 By the end of this class you should be able to:
 
-* Define machine learning
-* Recognize the four paradigms of machine learning
-* Understand basic terminology like algorithm, inputs, outputs, supervised, unsupervised
-* Differentiate between unsupervised and supervised ml
+* Define and understand the limitations of machine learning.
+* Understand basic terminology like algorithm, inputs, outputs, supervised, unsupervised.
+* Differentiate between unsupervised and supervised machine learning methods.
 
 ### What **isn't** machine learning?
 
@@ -80,7 +78,6 @@ Let's look at how machine learning is defined.
   * Essentially a protocol for a computer
 * Incorporates data into a statistical model
 * Improves with experience without human intervention
-
 
 ### Machine learning as code
 
@@ -162,7 +159,7 @@ The focus of this course will be on supervised and unsupervised learning, but it
 ### Anatomy of a machine learning problem
 discuss inputs and outputs
 
-dataset, features - really break down how a dataset doesn't capture the entirety of The Truth only the features we have collected.
+dataset, features - really break down how a dataset doesn't capture the entirety of The Truth only the features we have collected. We're trying to use collected features to understand and make predictions/inference about The Truth.
 
 ### An overview of supervised learning
 emphasize - labled data, concrete interpretations, 2 steps, 2 subclasses, used to make predictions
@@ -193,7 +190,7 @@ Welcome to class 2 of Concepts in Machine Learning!
 
 By the end of this class you should be able to:
 
-* Define supervised learning
+* Define and understand the limitations of supervised learning
 * Differentiate between regression and classification
 * Assess whether or not supervised learning is an appropriate tool for a question
 * Understand basic applications of supervised learning (linear regression, logistic regression)
@@ -301,13 +298,95 @@ Hinton, Geoffrey; Sejnowski, Terrence (1999). Unsupervised Learning: Foundations
 
 ### Connectivity-based clustering (heirarchical)
 
-"Connectivity-based clustering, also known as hierarchical clustering, is based on the core idea of objects being more related to nearby objects than to objects farther away. These algorithms connect "objects" to form "clusters" based on their distance. A cluster can be described largely by the maximum distance needed to connect parts of the cluster. At different distances, different clusters will form, which can be represented using a dendrogram, which explains where the common name "hierarchical clustering" comes from: these algorithms do not provide a single partitioning of the data set, but instead provide an extensive hierarchy of clusters that merge with each other at certain distances. In a dendrogram, the y-axis marks the distance at which the clusters merge, while the objects are placed along the x-axis such that the clusters don't mix."
+"Connectivity-based clustering, also known as hierarchical clustering, is based on the core idea of objects being more related to nearby objects than to objects farther away. These algorithms connect "objects" to form "clusters" based on their distance. A cluster can be described largely by the maximum distance needed to connect parts of the cluster. At different distances, different clusters will form, which can be represented using a dendrogram, which explains where the common name "hierarchical clustering" comes from: these algorithms do not provide a single partitioning of the data set, but instead provide an extensive hierarchy of clusters that merge with each other at certain distances. In a dendrogram, the y-axis marks the distance at which the clusters merge, while the objects are placed along the x-axis such that the clusters don't mix." wikipedia
+
+### Centroid-based clustering (k-means)
 
 ### The curse of dimensionality
 
 ### Dimensionality reduction
 
 ### Principle componant analysis (PCA)
+
+### Evaluation and interpretation of unsupervised learning methods
+
+### Review!
+
+### Next Class
+
+### Reading
+
+---
+
+## Concepts in Machine Learning Class 4: Exploratory Data Analysis, Experimental Design, and Ethics in Machine Learning
+
+Welcome to class 4 of Concepts in Machine Learning!
+
+By the end of this class you should be able to:
+
+* Describe what exploratory data analysis is and why it's important.
+* Understand the ethical implications of machine learning
+
+### What is exploratory data analysis?
+
+### EDA is a detour
+
+* not very structured
+* exploration 
+* iterative
+
+### An EDA checklist
+
+1. What question(s) are you trying to solve (or prove wrong)?
+2. What kind of data do you have and how do you treat different types?
+3. What’s missing from the data and how do you deal with it?
+4. Where are the outliers and why should you care about them?
+5. How can you add, change or remove features to get more out of your data?
+
+
+### Let's practice!
+
+We will use a synthetic dataset of cardiovascular disease risk data from Ted Laderast at OHSU.
+
+View the related course materials here: https://github.com/laderast/cvdNight1 and https://github.com/laderast/cvdNight2
+
+Explore the dataset here: https://tladeras.shinyapps.io/cvdnight1/
+
+More information about the generation of this dataset is available here: https://www.biorxiv.org/content/early/2017/12/12/232611
+
+#### 1. What question(s) are you trying to solve?
+
+Start simple - with one problem and work out from there as needed.
+
+In this dataset a problem we could solve is - can we predict if someone will get cvd based on these attributes.
+
+### 2. What kind of data do you have?
+
+Investigate the data types in the data set
+ * go colummn by column and to id numerical, categorical, not sure
+ * Remove unnecessary columns (ex ID column)
+
+
+ * data dictionaries
+ * consulting a subject matter expert
+ * google!
+
+### 3. What's missing from your data?
+
+There are some common ways to denote empty cells. It's important to understand what an empty cell means in your data set (i.e. is NA different than "")
+
+Show visual check of missing data
+
+Options with missing data:
+ * remove the column
+  * ml algorithms like as much data as possible so this might not be ideal for smaller datasets
+ * impute
+   * i.e. fill in missing age values with avg age.
+   * talk about pros and cons of removing vs imputing
+   
+### 4. Outliars and how to handle them
+ 
+### 5. How to add, change, and remove features to get the most out of your data.
 
 
 
