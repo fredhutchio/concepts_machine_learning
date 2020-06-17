@@ -325,7 +325,10 @@ Welcome to class 4 of Concepts in Machine Learning!
 By the end of this class you should be able to:
 
 * Describe what exploratory data analysis is and why it's important.
-* Understand the ethical implications of machine learning
+* Understand the ethical implications of machine learning.
+
+### Review!
+* Review how machine learning works, trianing testing, information about datasets, features
 
 ### What is exploratory data analysis?
 
@@ -388,5 +391,24 @@ Options with missing data:
  
 ### 5. How to add, change, and remove features to get the most out of your data.
 
+### Ethics in machine learning
 
+* what do we mean by ethics?
+* general ethical concerns of machine learning algorithms
 
+* Replicating biases
+ * ML algorithms learn from datasets but what happens when biases are baked into the dataset?
+ * Need a good example here
+* Missing data
+* Intent behind design
+ * Bellmont Report
+ * Basically - even if we can do it SHOULD we
+ * Examples: ml to identify gay people/"criminals"/etc based on facial features. Getting close to eugenics here.
+* Take into account possible malevolent uses, interpretations
+ * Facial recognition
+
+### Review
+
+### Further reading
+
+### Closing
