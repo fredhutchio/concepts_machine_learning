@@ -8,15 +8,15 @@ This four week course is designed to introduce attendees to central concepts in 
 
 ## Schedule
 
-- Week 1: Introduction and Conceptual Overview; Machine Learning and Experimental Design
-- Week 2: Supervised Learning via Regression
-- Week 3: Supervised Learning via Classification
-- Week 4: Unsupervised Learning via Dimensionality Reduction, Clustering, and Transfer Learning
+- Class 1: Introduction and Conceptual Overview of Machine Learning Concepts
+- Class 2: Supervised Learning via Regression and Classification
+- Class 3: Unsupervised Learning via Dimensionality Reduction and Clustering
+- Class 4: Experimental Design and Ethics in the Machine Learning Process
 
 ## Resources
 
-* Each week's materials are described in the script prefaced with the number of the week.
-* `exercises/` includes a file for each week representing both the aggregated in-class exercises as well as additional
+* Each class's materials are described in the markdown file prefaced with the number of the class.
+* `exercises/` includes a file for each class representing both the aggregated in-class exercises as well as additional
 supplemental exercises for practice
 * `solutions/` includes the solutions for all files in `exercises/`
 * `instructors.md` includes information for instructors to facilitate teaching each lesson
