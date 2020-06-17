@@ -5,7 +5,7 @@
 
 Welcome to Concepts in Machine Learning from fredhutch.io! This course is designed for researchers who are interested in machine learning, and assumes no prior programming or statistics experience. There are no prerequisites for this course.
 
-This course will introduce you to machine learning and give a broad overview of supervised and unsupervised machine learning. The goal of this course is to provide some conceptual background for our Machine Learning in R and Python series. Further, researchers who complete this course should have an understanding of how machine learning can be applied in biology research.
+This course will introduce you to machine learning and give a broad overview of supervised and unsupervised machine learning methods. The goal of this course is to provide some conceptual background for our Machine Learning in R and Python series. Further, researchers who complete this course should have an understanding of how machine learning can be applied in biology research.
 
 By the end of this class you should be able to:
 
@@ -16,6 +16,12 @@ By the end of this class you should be able to:
 ### What **isn't** machine learning?
 
 Buzzwords like ‘machine learning’, ‘deep learning’, and ‘artificial intelligence’ get thrown around quite a bit these days. Sometimes they seemed to be used as synonyms, others as distinct entities. It can be hard to determine exactly what these big, vague terms mean to the layperson. So let’s start with what *isn’t* machine learning.
+
+<p float="middle">
+  <img src="images/dashml.jpeg" width="300" />
+  <img src="images/mlPile.png" width="300" /> 
+  <img src="images/simpleProblem.png" width="300" />
+</p>
 
 **Machine learning is NOT:**
 
@@ -30,18 +36,18 @@ Recent advances in compute power, cloud technologies, data collection and data g
 
 Let’s orient ourselves to the terms I mentioned in the previous slides that you may be familiar with (ML, AI, Deep learning) to get a sense of how things fit together.
 
+![](images/aiMlDl.png)
+
 * AI is a term that embodies anything that enables computers to act more like humans.
-  * Turing test
-  * “I talk to siri and she answers”
-  * This is a whole field of knowledge like ‘biology’ or ‘chemistry’
+  * This is a whole field of knowledge like ‘biology’ or ‘chemistry’.
 
-* Machine learning is a subset of AI
-  * Focused on the extraction of patterns from large datasets
+* Machine learning is a field of study within AI.
+  * The focus of this field is on the extraction of patterns from large datasets.
 
-* Deep learning is a collections of similar machine learning methods.
-  * A group of similar techniques that use neural networks
-  * There are other groups of related methods that are subsets of machine learning as a whole
-    * support vector machine
+* Deep learning is an example of a collection of similar machine learning methods.
+  * It is a group of similar techniques that use neural networks to learn.
+  * There are other groups of related methods such as:
+    * support vector machines
     * decision trees
 
 ### Machine learning defined
@@ -54,13 +60,13 @@ Let's look at how machine learning is defined.
 
 **[Nature Genetics Review:](https://www.nature.com/articles/nrg3920)** The field of machine learning includes the development and application of computer algorithms that improve with experience.
 
-**Common themes**
+While these definitions vary slightly there are a few common themes to pull out:
 
-* A kind of algorithm
-  * A finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation (Wikipedia)
-  * Essentially a protocol for a computer
-* Incorporates data into a statistical model
-* Improves with experience without human intervention
+* ML is a kind of algorithm.
+  * Algorithm - A finite sequence of well-defined, computer-implementable instructions, typically to solve a class of problems or to perform a computation (Wikipedia)
+   * Essentially it is a protocol for a computer
+* ML incorporates data into a statistical model.
+* ML improves with experience without human intervention.
 
 ### Machine learning as code
 
