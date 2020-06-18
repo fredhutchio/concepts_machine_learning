@@ -149,10 +149,14 @@ The focus of this course will be on supervised and unsupervised learning, but it
 
 ### Anatomy of a machine learning problem
 
-The purpose of using machine learning is generally to use available data make an inference or prediction. To do this, these algorithms access large **datasets** with many **features**. It's important to remember that datasets rarely, if ever, will capture all of the complex underlying variables that result in the Truth that we see in the world. Datasets merely capture the features that we think are related to the system that we are trying to uncover and that we can adequately measure and track.
+The purpose of using machine learning is generally to use data make an inference or prediction. To do this, these algorithms access large **datasets** with many **features**. Datasets rarely, if ever, will capture all of the complex underlying variables that result in the Truth that we see in the world. Datasets merely capture the features that we think are related to the system that we are trying to uncover and that we can adequately measure and track. 
+
+It's important to think critically about what features we want to include in our datasets and identify features that may introduce biases into the algorithm. We will discuss exploratory data analysis and ethics as key pieces of the machine learning process in class 4 of this series.
 
 Below are some common terms you'll see in relation to machine learning:
 
+* Dataset/Data:
+  * A dataset is a collection of features that are related to the problem you're trying to solve.
 * Input variables (AKA predictors, independent variables, features or just variables)
   * There can and often will be multiple input variables.
   * These are the features of our dataset that the model will use to predict some response.
@@ -164,6 +168,8 @@ Below are some common terms you'll see in relation to machine learning:
 
 #### Challenge! 
 1. If we are trying to predict whether or not an animal is a cat or a dog what features might we collect?
+
+[click here to go to solutions page]()
 
 ### An overview of supervised learning
 
@@ -197,10 +203,22 @@ There are two subclasses of unsupervised machine learning:
 Determine whether the following problem statements are supervised or unsupervised machine learning.
 **COME UP WITH PRACTICE QUESTIONS**
 
-### Review!
+[click here to go to solutions page]()
+
+### Review! What is machine learning?
+
+### Review! When should I use machine learning?
+
+### Review! What are the main difference between supervised and unsupervised machine learning?
 
 ### Next week: supervised machine learning
 
-### Reading material
+Next week we will dive deeper into supervised learning. We will talk about:
+* Collecting data for supervised learning algorithms.
+* Examine the similarities and differences between classification and regression.
+* Practice identifying and writing supervised learning problem statements.
+* Discuss some common problems that people run into with supervised learning like over/under-fitting and the bias-variance trade-off.
+
+### Optional material
 
 * Tarca, Adi L et al. “Machine learning and its applications to biology.” PLoS computational biology vol. 3,6 (2007): e116. doi:10.1371/journal.pcbi.0030116[](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1904382/)
