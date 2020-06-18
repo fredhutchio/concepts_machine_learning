@@ -18,9 +18,9 @@ By the end of this class you should be able to:
 Buzzwords like ‘machine learning’, ‘deep learning’, and ‘artificial intelligence’ get thrown around quite a bit these days. Sometimes they seemed to be used as synonyms, others as distinct entities. It can be hard to determine exactly what these big, vague terms mean to the layperson. So let’s start with what *isn’t* machine learning.
 
 <p float="middle">
-  <img src="images/dashml.jpeg" width="300" />
-  <img src="images/mlPile.png" width="300" /> 
-  <img src="images/simpleProblem.png" width="300" />
+  <img src="images/dashml.jpeg" width="250" />
+  <img src="images/mlPile.png" width="250" /> 
+  <img src="images/simpleProblem.png" width="250" />
 </p>
 
 **Machine learning is NOT:**
@@ -36,6 +36,8 @@ Recent advances in compute power, cloud technologies, data collection and data g
 
 Let’s orient ourselves to the terms I mentioned in the previous slides that you may be familiar with (ML, AI, Deep learning) to get a sense of how things fit together.
 
+<img align="left" width="500" src="images/aiMlDl.png">
+
 * AI is a term that embodies anything that enables computers to act more like humans.
   * This is a whole field of knowledge like ‘biology’ or ‘chemistry’.
 * Machine learning is a field of study within AI.
@@ -46,16 +48,6 @@ Let’s orient ourselves to the terms I mentioned in the previous slides that yo
     * support vector machines
     * decision trees
 
-<img align="left" width="500" src="images/aiMlDl.png">
-
-
-
-```
-<p float="middle">
-  <img src="images/aiMlDl.png" width="300" />
-  dlaksdfjalksf
-</p>
-```
 ### Machine learning defined
 
 Let's look at how machine learning is defined.
