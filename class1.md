@@ -36,20 +36,26 @@ Recent advances in compute power, cloud technologies, data collection and data g
 
 Let’s orient ourselves to the terms I mentioned in the previous slides that you may be familiar with (ML, AI, Deep learning) to get a sense of how things fit together.
 
-![](images/aiMlDl.png)
-
 * AI is a term that embodies anything that enables computers to act more like humans.
   * This is a whole field of knowledge like ‘biology’ or ‘chemistry’.
-
 * Machine learning is a field of study within AI.
   * The focus of this field is on the extraction of patterns from large datasets.
-
 * Deep learning is an example of a collection of similar machine learning methods.
   * It is a group of similar techniques that use neural networks to learn.
   * There are other groups of related methods such as:
     * support vector machines
     * decision trees
 
+<img align="left" width="500" src="images/aiMlDl.png">
+
+
+
+```
+<p float="middle">
+  <img src="images/aiMlDl.png" width="300" />
+  dlaksdfjalksf
+</p>
+```
 ### Machine learning defined
 
 Let's look at how machine learning is defined.
@@ -124,14 +130,15 @@ Every-day applications:
 Researchers are developing algorithms that use machine learning to classify histopathological images, visualize and find clusters within single cell datasets, and much more.
 
 Biology specific applications:
-* Automated gating for single cell mass and flow cytometry
-* Visualization and clustering of single-cell RNA sequencing data
-* Classification of histopathological images of breast tissue to identify malignant tumors
+* Prediction of protein secondary structure based on RNA-sequence.
+* Classification of histopathological images of breast tissue to identify malignant tumors.
+* Using gene expression data to classify patients into different clinical groups.
 
 Work happening here at Fred Hutch
-Gottardo lab - automatic gating for flow cytometry data (FAUST)
-Emily Silgards Data Science group - use natural language processing to extract information from electronic medical records
-Michael Zager’s group - single cell visualization and clustering using methods like tSNE
+
+* Gottardo lab - [automatic gating for flow cytometry data.](https://www.biorxiv.org/content/10.1101/702118v2)
+* Emily Silgard's data science group - [natural language processing to extract information from unstructured electronic medical records notes.](https://www.sciencedirect.com/science/article/abs/pii/S1532046419302217)
+* The Data Visualization Center - [single-cell visualization and clustering of RNA-sequencing data to find rare subtypes of cells that emerge in the mouse embryo.](https://oncoscape.v3.sttrcancer.org/atlas.gs.washington.edu.mouse.rna/landing)
 
 ### How do these machine learning applications work?
 
