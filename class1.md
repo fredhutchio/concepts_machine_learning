@@ -17,7 +17,7 @@ By the end of this class you should be able to:
 
 Buzzwords like ‘machine learning’, ‘deep learning’, and ‘artificial intelligence’ get thrown around quite a bit these days. Sometimes they seemed to be used as synonyms, others as distinct entities. It can be hard to determine exactly what these big, vague terms mean to the layperson. So let’s start with what *isn’t* machine learning.
 
-<p float="middle">
+<p align="center">
   <img src="images/dashml.jpeg" width="250" />
   <img src="images/mlPile.png" width="250" /> 
   <img src="images/simpleProblem.png" width="250" />
@@ -36,7 +36,7 @@ Recent advances in compute power, cloud technologies, data collection and data g
 
 Let’s orient ourselves to the terms I mentioned in the previous slides that you may be familiar with (ML, AI, Deep learning) to get a sense of how things fit together.
 
-<p float="middle">
+<p align="center">
   <img align="middle" width="500" src="images/aiMlDl.png">
 </p>
 
