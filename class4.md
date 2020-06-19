@@ -90,6 +90,12 @@ Options with missing data:
 
 ### Review
 
-### Further reading
+### Extra materials
+
+If you have some coding experience:
+* [Practice setting up your first machine learning model in Python with Kaggle](https://www.kaggle.com/learn/intro-to-machine-learning)
+* [Practice setting up a machine learning model in R with TidyModels](https://www.tidymodels.org/start/models/)
 
 ### Closing
+
+Upcoming R and Python machine learning courses
