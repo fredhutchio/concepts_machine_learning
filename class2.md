@@ -73,41 +73,77 @@ Data collection and labeling is an intensive process and it can be incredibly di
 
 ### How do you train a machine?
 
-Training is the hallmark of a supervised learning algorithm because this is the step where a 'supervisor' essentially gives the machine the answers. A machine is trained by feeding it large labeled datasets (aka training or validation sets) like we just learned about above. The algorithm works by finding patterns in the dataset and building it's own set of rules to determine what the outcome might be based on new inputs. When we say large we mean that these training sets should have at a minimum tens of thousands of rows.
+Training is the hallmark of a supervised learning algorithm because this is the step where a 'supervisor' essentially gives the machine the answers. A machine is trained by feeding it large labeled datasets (aka training or validation sets) like we just learned about above. The algorithm works by finding patterns in the dataset and building it's own set of rules to determine what the outcome might be based on new inputs. When we say large we mean that these training sets should have at a minimum tens of thousands of rows. The more data the better.
+
+Going back to our example of identifying spam emails, a user would provide an algorithm tens of thousands of emails along with whether or not that email is spam or not. If training is effective when given a new email the algorithm should be able to accurately predict whether or not it is spam.
 
 ### How do you test a machine?
 
+**Need better info on testing**
+
+### Exampes of supervised machine learning
+
+**Determining if a tumor is benign or not from an image**
+* Input: Images of tumors
+* Output: Binary; begign or malignant
+* Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+
+**Identifying handwritten letters**
+* Input: Scanned, handwritten letters
+* Output: The actual character
+* Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
+
+### Two kinds of supervised learning: classification and regression
+
+The main difference between classification and regression is that classification predicts a categorical variable and regression predicts a continuous numerical value.
+
+<p align="center">
+  <img width="350" alt="" src="images/supervised.png">
+</p>
+
 ### Classification
 
-* Assign a value
-* Emphasize necessity of having a 'teacher' - labeled features are what the machine uses to learn how to classify
-* Decision trees, support vector machine
-* example use cases
- * classic: dog vs cat
+Classification aims to predict a class label, which is a choice from a predetermined list of possibilities.
+* Binary classification: Classifying into exactly two classes.
+* Multiclass classification: Classifying into more than two classes.
 
-### False-positives and false-negatives
+*Decision trees* and *support vector machines* are two kinds of classification methods.
 
-### Regression
+### What is regression?
 
-* Predict a continuous numerical value
-* point out that logistic regression is actually a classification method
-* linear/polynomial regression
-* example use cases
- * classic: predicting income
+Regression is a form of supervised learning that predicts a continuous numerical value. 
+* Linear regression: Aims to draw a straight best fit line through a field of data points. 
+* Polynomial regression: Aims to draw a curved best fit line trhough a field of data points.
+
+### Generalization, overfitting, and underfitting
+
+The goal in supervised learning is to build a model that can make accurate prediction on new, unseen datasets that have the same features of the test set used. A model that is capable of making accurate predictions on new data is called *genderalizable*. We want to create a model that can generalize as accurately as possible. 
+
+If training and testing sets are similar enough, we would expect the model to be accurate on the training set. This might sound like a good thing, however, it can cause problems. We can always build a more and more complex model until we are almost 100 percent accurate on the training set, but the only way to truely test how well a model works on new data is by evaluation on a test set. Simple models will generalize better to new data.
+
+*Overfitting* occurs when a model is fitted too closely to the specific artifacts of a dataset. In this situation the model will work very well with training data but fail to generalize to new data.
+
+*Underfitting* occurs when a model is too simple to capture variability in the dataset. In this situation the model won't work well on the training set.
+* Example: "Everyone who smokes will get cancer" does not capture any of the variablity in possible outcomes.
 
 ### Bias-variance trade off
+
+<p align="center">
+  <img width="350" alt="" src="modelcomplexity.png">
+</p>
+
+As a model gets more complex, it will become better at predicting on training data. However, if it becomes too complex then it will begin to fail to generalize to new data. This relationship is called the *bias-variance trade off*.
+
 * Bias is the amount of error introduced by approximating real-world phenomena with a simplified model.
-* Variance is how much your model's test error changes based on variation in the training data. It reflects the model's sensitivity to the idiosyncrasies of the data set it was trained on.
-* As a model increases in complexity and it becomes more wiggly (flexible), its bias decreases (it does a good job of explaining the training data), but variance increases (it doesn't generalize as well). Ultimately, in order to have a good model, you need one with low bias and low variance.
+* Variance is how much your model's test error changes based on variation in the training data. It reflects the model's sensitivity to the quirks of the dataset it was trained on.
 
-### How to mitigate overfitting
+The ideal situation is one where performance is both highly accurate and generalizable to new data.
 
-1. More training data
-2. 
+### The relationship between model complexity and dataset size
 
-### Evaluating a supervised learning model
+Model complexity is closely tied to the variation of inputs contained in the testing set. Variation can only be comprehensively captured by having very large datasets. You can avoid overfitting by increasing the size of the datasets and therefore increasing the variety of data points in your dataset.
 
-Loss functions
+**An important note is that adding data points that are duplicates or very similar to those already captured in the dataset will not increase complexity**
 
 ### Practice with problem statements
 Use Ted Lederas cvd dataset variables to construct a problem statement. One classification and one regression.
