@@ -33,17 +33,28 @@ Some examples we've talked about are:
 
 ### Review! Anatomy of a machine learning problem
 
-ex: we are trying to predict whether or not someone will get the flu this flu season.
+Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.
 
-reality/truth: a persons health history, location, occupation, diet, socialization habits, among many other things will play into if someone gets the flu or not. 
+**Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
 
-dataset: when creating the dataset that will be used to make our prediction we have to understand that we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. 
+**Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
 
-features/variables: These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making our prediction.
+Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data and would be considered an annotated or labeled training dataset.
 
-inputs: features that we will use to make our prediction
+| patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
+| ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
+| HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
+| HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
 
-output: a prediction or inference about the data.
+**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction.
+
+In this case: `patient_Id`, `age`, `htn`, `treat`, `smoking`, `race`, `t2d`, `gender`, `numAge`, `bmi`, `tchol`, and `sbp`, and `cvd`.
+
+**Inputs:** Features that we have collected and will use to make our prediction. In this dataset our inputs would be all of the columns except `patient_Id` and `cvd`. We would likely remove `pateint_Id` because a random identifier won't have any predictive power and `cvd` would not be included as an input since it is the target we are trying to predict.
+
+**Output:** The variable that we are trying to predict. In this case `cvd`.
+
+Obviously this fairly simple dataset will not capture all the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only training and testing will prove if this dataset is capable of creating an accurate and generalizable model.
 
 ### An overview of supervised learning
 
@@ -61,10 +72,18 @@ There are two subclasses of supervised learning:
 
 ### Some basic examples of supervised machine learning
 
+<p align="center">
+  <img width="350" alt="" src="images/histopathBreast.png">
+</p>
+
 **Determining if a tumor is benign or not from an image**
 * Input: Images of tumors
 * Output: Binary; begign or malignant
 * Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+
+<p align="center">
+  <img width="350" alt="" src="images/handwriting.png">
+</p>
 
 **Identifying handwritten letters**
 * Input: Scanned, handwritten letters
@@ -79,7 +98,9 @@ Creating labeled datasets is one of the most time intensive pieces of supervised
 
 We will take a more in depth look at what makes a good dataset in class 4 when we discuss exploratory data analysis and ethics.
 
-**Insert Captcha comic**
+<p align="center">
+  <img width="350" alt="" src="images/mlCaptcha.png">
+</p>
 
 Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private. Since the underlying data is so important to the results and interpretation of machine learing algorithms.
 
@@ -177,9 +198,9 @@ Regression is a form of supervised learning that predicts a continuous numerical
 
 This is the most simple form of regression. The linear regression aims to minimize the mean squared error between prediction variables and the true output variable. The mean squared error is the sum of the squared differences between the predictions and the true values, divided by the number of samples.
 
+**Need some info on evaluation like R2**
 
 ### Practice with problem statements
-Use Ted Lederas cvd dataset variables to construct a problem statement. One classification and one regression.
 
 ### Review! When to use supervised machine learning
 
@@ -192,3 +213,9 @@ Use Ted Lederas cvd dataset variables to construct a problem statement. One clas
 ### Next week: Unsupervised learning
 
 ### Reading materials
+
+[Yee, S., &amp; Chu, T. (2015). A visual introduction to machine learning. Retrieved June 22, 2020, from http://www.r2d3.us/visual-intro-to-machine-learning-part-1/](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
+* An animated, scrolling walkthrough of a decision tree.
+
+[Schrider, D. R., & Kern, A. D. (2018). Supervised machine learning for population genetics: a new paradigm. Trends in Genetics, 34(4), 301-312.](https://pubmed.ncbi.nlm.nih.gov/29331490/)
+* A review of supervised machine learning in population genetics

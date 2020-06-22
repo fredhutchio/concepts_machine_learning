@@ -153,18 +153,27 @@ The purpose of using machine learning is generally to use data make an inference
 
 It's important to think critically about what features we want to include in our datasets and identify features that may introduce biases into the algorithm. We will discuss exploratory data analysis and ethics as key pieces of the machine learning process in class 4 of this series.
 
-Below are some common terms you'll see in relation to machine learning:
+**Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.**
 
-* Dataset/Data:
-  * A dataset is a collection of features that are related to the problem you're trying to solve.
-* Input variables (AKA predictors, independent variables, features or just variables)
-  * There can and often will be multiple input variables.
-  * These are the features of our dataset that the model will use to predict some response.
-* Output variable (AKA response or dependent variable)
-  * A feature that the model is trying to predict
-* Annotated or labeled data:
-  * Paired input and output values.
-  * Used for training and testing of models.
+**Reality/truth:** A persons health history, location, occupation, diet, habits, and stress levels, among many other things will play into if someone gets diagnosed with cardiovascular disease. 
+
+**Dataset:** When creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
+
+Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data together.
+
+| patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
+| ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
+| HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
+| HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
+
+**Inputs:** Features that we have collected and will use to make our prediction. In this dataset our inputs would be all of the columns except `patient_Id` and `cvd`. We would likely remove `pateint_Id` because a random identifier won't have any predictive power and `cvd` would not be included as an input since it is the target we are trying to predict.
+
+**Output:** The variable that we are trying to predict. In this case `cvd`.
+
+Obviously this fairly simple dataset will not capture all the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only training and testing will prove if this dataset is capable of creating an accurate and generalizable model.
+
+#### Note!
+The dataset above is from the package `cvdRiskData`. you can find more information [here](https://github.com/laderast/cvdRiskData). We will be using this dataset as an example throughout this course.
 
 #### Challenge! 
 1. If we are trying to predict whether or not an animal is a cat or a dog what features might we collect?
