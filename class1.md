@@ -153,11 +153,11 @@ The purpose of using machine learning is generally to use data make an inference
 
 It's important to think critically about what features we want to include in our datasets and identify features that may introduce biases into the algorithm. We will discuss exploratory data analysis and ethics as key pieces of the machine learning process in class 4 of this series.
 
-Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.
+**Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.**
 
-**Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
+**Reality/truth:** A persons health history, location, occupation, diet, habits, and stress levels, among many other things will play into if someone gets diagnosed with cardiovascular disease. 
 
-**Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
+**Dataset:** When creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
 
 Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data together.
 
