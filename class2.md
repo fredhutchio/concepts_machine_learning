@@ -206,16 +206,9 @@ This is the most simple form of regression. The linear regression aims to minimi
 
 ### Practice with problem statements
 
-### Review! When to use supervised machine learning
+## Wrap up
 
-Supervised machine learning is
-### Review! Regression vs classification
-
-### Review! Bias-variance trade off
-
-### Review! Evaluating a supervised machine learning model
-
-### Next week: Unsupervised learning
+Today, we covered some of the main topics of supervised learning. We discussed the importance of data collection, dove into classification methods like decision trees and different kinds of regression methods, and practiced writing supervised learning problem statements. For more in depth information check out the optional materials below. Specifically the Visual intro to Machine Learning has a great visualization of how decision trees work.
 
 ### Reading materials
 
