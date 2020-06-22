@@ -72,20 +72,22 @@ There are two subclasses of supervised learning:
 
 ### Some basic examples of supervised machine learning
 
+#### Determining if a tumor is benign or not from an image
+
 <p align="center">
   <img width="350" alt="" src="images/histopathBreast.jpg">
 </p>
 
-**Determining if a tumor is benign or not from an image**
 * Input: Images of tumors
 * Output: Binary; begign or malignant
 * Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+
+#### Identifying handwritten letters
 
 <p align="center">
   <img width="350" alt="" src="images/handwriting.png">
 </p>
 
-**Identifying handwritten letters**
 * Input: Scanned, handwritten letters
 * Output: The actual character
 * Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
@@ -178,7 +180,7 @@ Above is a decision tree built on a breast cancer dataset to predict whether or 
 
 It can be helpful to orient yourself by finding out which paths of the tree most data points take. You can assess this on the image above by looking at the `samples` variable shown in each node.
 
-### Feature importance to summarize useful properties
+### Feature importance to summarize useful properties in a tree
 
 Feature importance is a commonly used method to summarize the inner workings of a decision tree. It captures how important each feature is for the decision the tree makes. It is always a number between 0 and 1, where 0 means a feature wasn't used at all and 1 means the feature perfectly predicts the target outcome. The feature importance of each feature should always add up to 1.
 
@@ -200,10 +202,13 @@ This is the most simple form of regression. The linear regression aims to minimi
 
 **Need some info on evaluation like R2**
 
+### Polynomial regression
+
 ### Practice with problem statements
 
 ### Review! When to use supervised machine learning
 
+Supervised machine learning is
 ### Review! Regression vs classification
 
 ### Review! Bias-variance trade off
