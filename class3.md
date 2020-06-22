@@ -4,6 +4,8 @@
 
 Welcome to class 2 of Concepts in Machine Learning!
 
+In the last class we dug a little deeper into supervised machine learning concepts and methods. Today we will do essentially the same thing but cover unsupervised learning!
+
 By the end of this class you should be able to:
 
 * Define unsupervised learning
@@ -14,15 +16,51 @@ By the end of this class you should be able to:
 
 ### Review! What is machine learning?
 
-### Review! Unsupervised vs unsupervised machine learning
+Machine learning is a:
+* field of study within the larger field of artificial intellegence
+* way of programming computers
+* an algorithm that incorporates large datasets into a statistical model and improves with experience
+
+### Review! When to use machine learning
+
+Machine learning is especially good at tackeling problems where **you cannot code the rules** and **you cannot scale**.
+
+Some examples we've talked about are:
+* Classifying emails as spam
+* Recognizing hand written letters
+* Predicting a patients clinical outcome
+* Clustering cells by cell type based on genetic data
 
 ### What is unsupervised machine learning?
 
-"Unsupervised learning is a type of machine learning that looks for previously undetected patterns in a data set with no pre-existing labels and with a minimum of human supervision. In contrast to supervised learning that usually makes use of human-labeled data, unsupervised learning, also known as self-organization allows for modeling of probability densities over inputs."
+The goal of unsupervised learning is to detect the underlying structure and patterns in a dataset with no pre-existing labels. The lack of pre-existing labels means that the algorithm is able to work with minimal human supervision which is why we call these methods 'unsupervised'.
 
-Hinton, Geoffrey; Sejnowski, Terrence (1999). Unsupervised Learning: Foundations of Neural Computation. MIT Press.
+Unlike with supervised learning, unsupervised learning methods do not require annotated training data to work. With no training or testing required there is only one step, fitting.
 
-### When to use unsupervised learning?
+There are two kinds of supervised learning
+1. Unsupervised transformations: Create a new representation of a complex dataset that is easier to understand than the original.
+2. Clustering: Partition data into distinct groups of similar objects.
+
+### Some basic examples of supervised machine learning
+
+#### Clustering images by person in the image
+
+<p align="center">
+  <img width="350" alt="" src="">
+</p>
+
+* Input: Images of people
+* Output: Images sorted so that each unique face found in the dataset has its own folder
+
+#### 
+
+<p align="center">
+  <img width="350" alt="" src="images/handwriting.png">
+</p>
+
+* Input: Scanned, handwritten letters
+* Output: The actual character
+* Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
 
 ### What is fitting?
 
