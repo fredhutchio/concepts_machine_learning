@@ -59,6 +59,18 @@ There are two subclasses of supervised learning:
 1. Regression: predicting a numeric
 2. Classification: predicting a category
 
+### Some basic examples of supervised machine learning
+
+**Determining if a tumor is benign or not from an image**
+* Input: Images of tumors
+* Output: Binary; begign or malignant
+* Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+
+**Identifying handwritten letters**
+* Input: Scanned, handwritten letters
+* Output: The actual character
+* Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
+
 ### Training a machine starts with data collection
 
 All supervised learning algorithms require large training and testing datasets. 
@@ -81,17 +93,35 @@ Going back to our example of identifying spam emails, a user would provide an al
 
 **Need better info on testing**
 
-### Exampes of supervised machine learning
+### Generalization, overfitting, and underfitting
 
-**Determining if a tumor is benign or not from an image**
-* Input: Images of tumors
-* Output: Binary; begign or malignant
-* Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+The goal in supervised learning is to build a model that can make accurate prediction on new, unseen datasets that have the same features of the test set used. A model that is capable of making accurate predictions on new data is called *genderalizable*. We want to create a model that can generalize as accurately as possible. 
 
-**Identifying handwritten letters**
-* Input: Scanned, handwritten letters
-* Output: The actual character
-* Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
+If training and testing sets are similar enough, we would expect the model to be accurate on the training set. This might sound like a good thing, however, it can cause problems. We can always build a more and more complex model until we are almost 100 percent accurate on the training set, but the only way to truely test how well a model works on new data is by evaluation on a test set. Simple models will generalize better to new data.
+
+*Overfitting* occurs when a model is fitted too closely to the specific artifacts of a dataset. In this situation the model will work very well with training data but fail to generalize to new data.
+
+*Underfitting* occurs when a model is too simple to capture variability in the dataset. In this situation the model won't work well on the training set.
+* Example: "Everyone who smokes will get cancer" does not capture any of the variablity in possible outcomes.
+
+### Bias-variance trade off
+
+<p align="center">
+  <img width="350" alt="" src="images/modelcomplexity.png">
+</p>
+
+As a model gets more complex, it will become better at predicting on training data. However, if it becomes too complex then it will begin to fail to generalize to new data. This relationship is called the *bias-variance trade off*.
+
+* Bias is the amount of error introduced by approximating real-world phenomena with a simplified model.
+* Variance is how much your model's test error changes based on variation in the training data. It reflects the model's sensitivity to the quirks of the dataset it was trained on.
+
+The ideal situation is one where performance is both highly accurate and generalizable to new data. As you can see in the image above on the training set increasing model complexity will result in a more accurate result. However, on the testing set increasing model complexity only works to improve accuracy to an extent after which it become detrimental.
+
+#### The relationship between model complexity and dataset size
+
+Model complexity is closely tied to the variation of inputs contained in the testing set. Variation can only be comprehensively captured by having very large datasets. You can avoid overfitting by increasing the size of the datasets and therefore increasing the variety of data points in your dataset.
+
+**An important note is that adding data points that are duplicates or very similar to those already captured in the dataset will not increase complexity**
 
 ### Two kinds of supervised learning: classification and regression
 
@@ -109,41 +139,44 @@ Classification aims to predict a class label, which is a choice from a predeterm
 
 *Decision trees* and *support vector machines* are two kinds of classification methods.
 
-### What is regression?
+### Decision trees are a common form of classification
+
+Decision trees are widely used for both classification and regression tasks. The machine essentially learns a series of if/else questions that will lead to a decision. 
+
+Creating a decision tree means the machine is creating the series of if/else questions that will most efficiently lead to the decision. Each of these if/else questions is called a 'test'. The machine learning algorithm iterates over all possible test sequences to find the tree that is most informative and accurate in predicting our target output variable.
+
+You can see how it would be fairly easy to overfit a decision tree. We can keep adding more and more decisions until our training set is perfectly sorted. Two ways to mitigate this with decision trees are:
+1. Pruning: Removing or collapsing nodes that contain very little information at the bottom of the tree.
+2. Pre-pruning: Stopping the creation of the tree early by limiting the maximum depth of the tree or requiring a minimum number of data points in a node to keep splitting it.
+
+<p align="center">
+  <img width="600" alt="" src="images/decisionTreeBreastCancer.png">
+</p>
+
+Above is a decision tree built on a breast cancer dataset to predict whether or not a tumor is malignant or benign. This is a relatively small tree with a depth of four and it's already a bit overwhelming to make sense of. Trees with a depth of ten are not uncommon and can be even more difficult to grasp.
+
+It can be helpful to orient yourself by finding out which paths of the tree most data points take. You can assess this on the image above by looking at the `samples` variable shown in each node.
+
+### Feature importance to summarize useful properties
+
+Feature importance is a commonly used method to summarize the inner workings of a decision tree. It captures how important each feature is for the decision the tree makes. It is always a number between 0 and 1, where 0 means a feature wasn't used at all and 1 means the feature perfectly predicts the target outcome. The feature importance of each feature should always add up to 1.
+
+<p align="center">
+  <img width="600" alt="" src="images/featureImportance.png">
+</p>
+
+The above image summarizes the feature importance for each feature in the tree above.
+
+### Regression
 
 Regression is a form of supervised learning that predicts a continuous numerical value. 
 * Linear regression: Aims to draw a straight best fit line through a field of data points. 
 * Polynomial regression: Aims to draw a curved best fit line trhough a field of data points.
 
-### Generalization, overfitting, and underfitting
+### Linear regression (AKA ordinary least squares)
 
-The goal in supervised learning is to build a model that can make accurate prediction on new, unseen datasets that have the same features of the test set used. A model that is capable of making accurate predictions on new data is called *genderalizable*. We want to create a model that can generalize as accurately as possible. 
+This is the most simple form of regression. The linear regression aims to minimize the mean squared error between prediction variables and the true output variable. The mean squared error is the sum of the squared differences between the predictions and the true values, divided by the number of samples.
 
-If training and testing sets are similar enough, we would expect the model to be accurate on the training set. This might sound like a good thing, however, it can cause problems. We can always build a more and more complex model until we are almost 100 percent accurate on the training set, but the only way to truely test how well a model works on new data is by evaluation on a test set. Simple models will generalize better to new data.
-
-*Overfitting* occurs when a model is fitted too closely to the specific artifacts of a dataset. In this situation the model will work very well with training data but fail to generalize to new data.
-
-*Underfitting* occurs when a model is too simple to capture variability in the dataset. In this situation the model won't work well on the training set.
-* Example: "Everyone who smokes will get cancer" does not capture any of the variablity in possible outcomes.
-
-### Bias-variance trade off
-
-<p align="center">
-  <img width="350" alt="" src="modelcomplexity.png">
-</p>
-
-As a model gets more complex, it will become better at predicting on training data. However, if it becomes too complex then it will begin to fail to generalize to new data. This relationship is called the *bias-variance trade off*.
-
-* Bias is the amount of error introduced by approximating real-world phenomena with a simplified model.
-* Variance is how much your model's test error changes based on variation in the training data. It reflects the model's sensitivity to the quirks of the dataset it was trained on.
-
-The ideal situation is one where performance is both highly accurate and generalizable to new data.
-
-### The relationship between model complexity and dataset size
-
-Model complexity is closely tied to the variation of inputs contained in the testing set. Variation can only be comprehensively captured by having very large datasets. You can avoid overfitting by increasing the size of the datasets and therefore increasing the variety of data points in your dataset.
-
-**An important note is that adding data points that are duplicates or very similar to those already captured in the dataset will not increase complexity**
 
 ### Practice with problem statements
 Use Ted Lederas cvd dataset variables to construct a problem statement. One classification and one regression.
