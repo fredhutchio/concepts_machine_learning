@@ -172,6 +172,9 @@ Here's an example training dataset for predicting whether or not a patient might
 
 Obviously this fairly simple dataset will not capture all the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only training and testing will prove if this dataset is capable of creating an accurate and generalizable model.
 
+#### Note!
+The dataset above is from the package `cvdRiskData`. you can find more information [here](https://github.com/laderast/cvdRiskData). We will be using this dataset as an example throughout this course.
+
 #### Challenge! 
 1. If we are trying to predict whether or not an animal is a cat or a dog what features might we collect?
 
