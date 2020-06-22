@@ -96,15 +96,15 @@ There are two subclasses of supervised learning:
 
 All supervised learning algorithms require large training and testing datasets. 
 
-Creating labeled datasets is one of the most time intensive pieces of supervised machine learning. Sometimes this can be done automatically by merging datasets or scraping the internet, but many times the labeling must be done manually. Automatic labelling is quicker and cheaper, but generally messier and less accurate. Manual data collection is expensive and time consuming, but with fewer errors. You likely have been involved in some form of labeling yourself! It's not uncommon for companies to use their own customers for free labeling.
-
-We will take a more in depth look at what makes a good dataset in class 4 when we discuss exploratory data analysis and ethics.
+Creating labeled datasets is one of the most time intensive pieces of supervised machine learning. Sometimes this can be done automatically by merging datasets or scraping the internet, but many times the labeling must be done manually. Automatic labelling is quicker and cheaper, but generally messier and less accurate so lots of quality controle and cleaning are required. Manual data collection is expensive and time consuming, but with fewer errors. It's not uncommon for companies to use their own customers for free labeling. You likely have been involved in some form of labeling yourself! 
 
 <p align="center">
   <img width="350" alt="" src="images/mlCaptcha.png">
 </p>
 
-Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private. Since the underlying data is so important to the results and interpretation of machine learing algorithms.
+We will take a more in depth look at what makes a good dataset in class 4 when we discuss exploratory data analysis and ethics.
+
+Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private because it is so valuable.
 
 ### How do you train a machine?
 
