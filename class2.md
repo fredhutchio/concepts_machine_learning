@@ -39,18 +39,20 @@ Example: we are trying to predict whether or not someone will be diagnosed with 
 
 **Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
 
-**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction.
-
-**Inputs:** features that we have collected and will use to make our prediction
-
-**Output:** a prediction or inference about the data.
-
-Here's an example dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease.
+Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data and would be considered an annotated or labeled training dataset.
 
 | patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
 | ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
 | HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
 | HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
+
+**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction.
+
+In this case: `patient_Id`, `age`, `htn`, `treat`, `smoking`, `race`, `t2d`, `gender`, `numAge`, `bmi`, `tchol`, and `sbp`, and `cvd`.
+
+**Inputs:** Features that we have collected and will use to make our prediction. In this dataset our inputs would be all of the columns except `patient_Id` and `cvd`. We would likely remove `pateint_Id` because a random identifier won't have any predictive power and `cvd` would not be included as an input since it is the target we are trying to predict.
+
+**Output:** The variable that we are trying to predict. In this case `cvd`.
 
 Obviously this fairly simple dataset will not capture all the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only training and testing will prove if this dataset is capable of creating an accurate and generalizable model.
 
@@ -196,9 +198,9 @@ Regression is a form of supervised learning that predicts a continuous numerical
 
 This is the most simple form of regression. The linear regression aims to minimize the mean squared error between prediction variables and the true output variable. The mean squared error is the sum of the squared differences between the predictions and the true values, divided by the number of samples.
 
+**Need some info on evaluation like R2**
 
 ### Practice with problem statements
-Use Ted Lederas cvd dataset variables to construct a problem statement. One classification and one regression.
 
 ### Review! When to use supervised machine learning
 
@@ -211,3 +213,9 @@ Use Ted Lederas cvd dataset variables to construct a problem statement. One clas
 ### Next week: Unsupervised learning
 
 ### Reading materials
+
+[Yee, S., &amp; Chu, T. (2015). A visual introduction to machine learning. Retrieved June 22, 2020, from http://www.r2d3.us/visual-intro-to-machine-learning-part-1/](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
+* An animated, scrolling walkthrough of a decision tree.
+
+[Schrider, D. R., & Kern, A. D. (2018). Supervised machine learning for population genetics: a new paradigm. Trends in Genetics, 34(4), 301-312.](https://pubmed.ncbi.nlm.nih.gov/29331490/)
+* A review of supervised machine learning in population genetics
