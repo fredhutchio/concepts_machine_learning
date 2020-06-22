@@ -33,7 +33,7 @@ Some examples we've talked about are:
 
 ### Review! Anatomy of a machine learning problem
 
-Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.
+**Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.**
 
 **Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
 
@@ -72,20 +72,22 @@ There are two subclasses of supervised learning:
 
 ### Some basic examples of supervised machine learning
 
+#### Determining if a tumor is benign or not from an image
+
 <p align="center">
-  <img width="350" alt="" src="images/histopathBreast.png">
+  <img width="350" alt="" src="images/histopathBreast.jpg">
 </p>
 
-**Determining if a tumor is benign or not from an image**
 * Input: Images of tumors
 * Output: Binary; begign or malignant
 * Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+
+#### Identifying handwritten letters
 
 <p align="center">
   <img width="350" alt="" src="images/handwriting.png">
 </p>
 
-**Identifying handwritten letters**
 * Input: Scanned, handwritten letters
 * Output: The actual character
 * Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
@@ -94,15 +96,15 @@ There are two subclasses of supervised learning:
 
 All supervised learning algorithms require large training and testing datasets. 
 
-Creating labeled datasets is one of the most time intensive pieces of supervised machine learning. Sometimes this can be done automatically by merging datasets or scraping the internet, but many times the labeling must be done manually. Automatic labelling is quicker and cheaper, but generally messier and less accurate. Manual data collection is expensive and time consuming, but with fewer errors. You likely have been involved in some form of labeling yourself! It's not uncommon for companies to use their own customers for free labeling.
-
-We will take a more in depth look at what makes a good dataset in class 4 when we discuss exploratory data analysis and ethics.
+Creating labeled datasets is one of the most time intensive pieces of supervised machine learning. Sometimes this can be done automatically by merging datasets or scraping the internet, but many times the labeling must be done manually. Automatic labelling is quicker and cheaper, but generally messier and less accurate so lots of quality controle and cleaning are required. Manual data collection is expensive and time consuming, but with fewer errors. It's not uncommon for companies to use their own customers for free labeling. You likely have been involved in some form of labeling yourself! 
 
 <p align="center">
   <img width="350" alt="" src="images/mlCaptcha.png">
 </p>
 
-Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private. Since the underlying data is so important to the results and interpretation of machine learing algorithms.
+We will take a more in depth look at what makes a good dataset in class 4 when we discuss exploratory data analysis and ethics.
+
+Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private because it is so valuable.
 
 ### How do you train a machine?
 
@@ -128,7 +130,7 @@ If training and testing sets are similar enough, we would expect the model to be
 ### Bias-variance trade off
 
 <p align="center">
-  <img width="350" alt="" src="images/modelcomplexity.png">
+  <img width="600" alt="" src="images/modelcomplexity.png">
 </p>
 
 As a model gets more complex, it will become better at predicting on training data. However, if it becomes too complex then it will begin to fail to generalize to new data. This relationship is called the *bias-variance trade off*.
@@ -178,7 +180,7 @@ Above is a decision tree built on a breast cancer dataset to predict whether or 
 
 It can be helpful to orient yourself by finding out which paths of the tree most data points take. You can assess this on the image above by looking at the `samples` variable shown in each node.
 
-### Feature importance to summarize useful properties
+### Feature importance to summarize useful properties in a tree
 
 Feature importance is a commonly used method to summarize the inner workings of a decision tree. It captures how important each feature is for the decision the tree makes. It is always a number between 0 and 1, where 0 means a feature wasn't used at all and 1 means the feature perfectly predicts the target outcome. The feature importance of each feature should always add up to 1.
 
@@ -200,10 +202,13 @@ This is the most simple form of regression. The linear regression aims to minimi
 
 **Need some info on evaluation like R2**
 
+### Polynomial regression
+
 ### Practice with problem statements
 
 ### Review! When to use supervised machine learning
 
+Supervised machine learning is
 ### Review! Regression vs classification
 
 ### Review! Bias-variance trade off
