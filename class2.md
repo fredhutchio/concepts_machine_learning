@@ -210,6 +210,8 @@ This is the most simple form of regression. The linear regression aims to minimi
 
 Today, we covered some of the main topics of supervised learning. We discussed the importance of data collection, dove into classification methods like decision trees and different kinds of regression methods, and practiced writing supervised learning problem statements. For more in depth information check out the optional materials below. Specifically the Visual intro to Machine Learning has a great visualization of how decision trees work.
 
+Next class we will review concepts from the first two classes and cover unsupervised machine learning methods for clustering and dimensionality reduction.
+
 ### Reading materials
 
 [Yee, S., &amp; Chu, T. (2015). A visual introduction to machine learning. Retrieved June 22, 2020, from http://www.r2d3.us/visual-intro-to-machine-learning-part-1/](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
