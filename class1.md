@@ -214,19 +214,11 @@ Determine whether the following problem statements are supervised or unsupervise
 
 [click here to go to solutions page]()
 
-### Review! What is machine learning?
+### Wrapping up
 
-### Review! When should I use machine learning?
+Today, we briefly explored some of the main ideas we will be covering throughout this course including exploratory data anlysis, dataset collection, and supervised and unsupervised learning concepts and methods. For further reading on these topics check out the optional materials below.
 
-### Review! What are the main difference between supervised and unsupervised machine learning?
-
-### Next week: supervised machine learning
-
-Next week we will dive deeper into supervised learning. We will talk about:
-* Collecting data for supervised learning algorithms.
-* Examine the similarities and differences between classification and regression.
-* Practice identifying and writing supervised learning problem statements.
-* Discuss some common problems that people run into with supervised learning like over/under-fitting and the bias-variance trade-off.
+Next week we will dive deeper into supervised learning. We will discuss more about data collection and how it relates to supervised learning, examine classifcation and regression methods, practice identifying and writing problem statements, and discuss common issues with supervised machine learning like over-fitting.
 
 ### Optional material
 
