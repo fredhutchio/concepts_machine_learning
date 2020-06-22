@@ -33,7 +33,7 @@ Some examples we've talked about are:
 
 ### Review! Anatomy of a machine learning problem
 
-Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.
+**Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.**
 
 **Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
 
@@ -73,7 +73,7 @@ There are two subclasses of supervised learning:
 ### Some basic examples of supervised machine learning
 
 <p align="center">
-  <img width="350" alt="" src="images/histopathBreast.png">
+  <img width="350" alt="" src="images/histopathBreast.jpg">
 </p>
 
 **Determining if a tumor is benign or not from an image**
@@ -128,7 +128,7 @@ If training and testing sets are similar enough, we would expect the model to be
 ### Bias-variance trade off
 
 <p align="center">
-  <img width="350" alt="" src="images/modelcomplexity.png">
+  <img width="600" alt="" src="images/modelcomplexity.png">
 </p>
 
 As a model gets more complex, it will become better at predicting on training data. However, if it becomes too complex then it will begin to fail to generalize to new data. This relationship is called the *bias-variance trade off*.
