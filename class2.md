@@ -33,17 +33,26 @@ Some examples we've talked about are:
 
 ### Review! Anatomy of a machine learning problem
 
-ex: we are trying to predict whether or not someone will get the flu this flu season.
+Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.
 
-reality/truth: a persons health history, location, occupation, diet, socialization habits, among many other things will play into if someone gets the flu or not. 
+**Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
 
-dataset: when creating the dataset that will be used to make our prediction we have to understand that we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. 
+**Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
 
-features/variables: These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making our prediction.
+**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction.
 
-inputs: features that we will use to make our prediction
+**Inputs:** features that we have collected and will use to make our prediction
 
-output: a prediction or inference about the data.
+**Output:** a prediction or inference about the data.
+
+Here's an example dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease.
+
+| patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
+| ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
+| HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
+| HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
+
+Obviously this fairly simple dataset will not capture all the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only training and testing will prove if this dataset is capable of creating an accurate and generalizable model.
 
 ### An overview of supervised learning
 
@@ -61,10 +70,18 @@ There are two subclasses of supervised learning:
 
 ### Some basic examples of supervised machine learning
 
+<p align="center">
+  <img width="350" alt="" src="images/histopathBreast.png">
+</p>
+
 **Determining if a tumor is benign or not from an image**
 * Input: Images of tumors
 * Output: Binary; begign or malignant
 * Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+
+<p align="center">
+  <img width="350" alt="" src="images/handwriting.png">
+</p>
 
 **Identifying handwritten letters**
 * Input: Scanned, handwritten letters
@@ -79,7 +96,9 @@ Creating labeled datasets is one of the most time intensive pieces of supervised
 
 We will take a more in depth look at what makes a good dataset in class 4 when we discuss exploratory data analysis and ethics.
 
-**Insert Captcha comic**
+<p align="center">
+  <img width="350" alt="" src="images/mlCaptcha.png">
+</p>
 
 Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private. Since the underlying data is so important to the results and interpretation of machine learing algorithms.
 
