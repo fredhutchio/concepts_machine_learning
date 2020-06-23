@@ -43,11 +43,11 @@ Yes! Cats and dogs that are outliars in their groups with regard to size and wei
 
 ### Determine which of the following questions are supervised and unsueprvised machine learning problems.
 
-Based on genetic data which species of birds are more closely related?
+1. Based on genetic data which species of birds are more closely related?
 
 Since there is no labeled target to predict this is an **unsupervised learning** problem. Heirarchical clustering is commonly used to interrogate genetic relationships between species.
 
-What demographic sub groups exist of people that like Horror movies?
+2. What demographic sub groups exist of people that like Horror movies?
 
 Again, there is no target to predict so this is a clustering problem and is also **unsupervised learning**.
 
