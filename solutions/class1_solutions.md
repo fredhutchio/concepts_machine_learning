@@ -40,3 +40,21 @@ Yes! Cats and dogs that are outliars in their groups with regard to size and wei
   <img src="https://pictures-of-cats.org/wp-content/uploads/2018/06/another-big-maine-coonB.jpg" width="300" />
   <img src="https://www.thesprucepets.com/thmb/SlxjoBXUHc48_GEgpuM0Taq7wIM=/1080x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/51152221_1137081246458617_3144049680416140765_n-5c73f04d46e0fb0001835dd2.jpg" width="300" />
 </p>
+
+### Determine which of the following questions are supervised and unsueprvised machine learning problems.
+
+Based on genetic data which species of birds are more closely related?
+
+Since there is no labeled target to predict this is an **unsupervised learning** problem. Heirarchical clustering is commonly used to interrogate genetic relationships between species.
+
+What demographic sub groups exist of people that like Horror movies?
+
+Again, there is no target to predict so this is a clustering problem and is also **unsupervised learning**.
+
+3. Can we determine if an email is spam based on the text in the email?
+
+Here we have a specific target to predict. This is a classic classification problem and is **supervised learning**.
+
+4. Given a database of images can we pull out all the distinct faces?
+
+This could be a supervised learning problem if we had specific faces we wanted to find in a dataset. However, it's more likely that this would be an **unsupervised learning** problem where faces are clustered based on similar features.
