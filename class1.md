@@ -204,7 +204,7 @@ It's important to think critically about what features we want to include in our
 1. If we are trying to predict whether or not an animal is a cat or a dog what features might we collect?
 2. Are there any cases you can think of that might confuse your algorithm based on the features you've chosen?
 
-[click here to go to solutions page](https://github.com/fredhutchio/concepts_machine_learning/blob/lw-edits/solutions/class1_solutions.md#if-we-are-trying-to-predict-whether-or-not-an-animal-is-a-cat-or-a-dog-what-features-might-we-collect)
+[click here to go to solutions page](https://github.com/fredhutchio/concepts_machine_learning/blob/master/solutions/class1_solutions.md#if-we-are-trying-to-predict-whether-or-not-an-animal-is-a-cat-or-a-dog-what-features-might-we-collect)
 
 ### An overview of supervised learning
 
@@ -248,7 +248,7 @@ Determine whether the following problem statements are supervised or unsupervise
 3. Can we determine if an email is spam based on the text in the email?
 4. Given a database of images can we pull out all the distinct faces?
 
-[click here to go to solutions page](https://github.com/fredhutchio/concepts_machine_learning/blob/lw-edits/solutions/class1_solutions.md#determine-which-of-the-following-questions-are-supervised-and-unsueprvised-machine-learning-problems)
+[click here to go to solutions page](https://github.com/fredhutchio/concepts_machine_learning/blob/master/solutions/class1_solutions.md#determine-which-of-the-following-questions-are-supervised-and-unsueprvised-machine-learning-problems)
 
 ### Wrapping up
 
