@@ -25,6 +25,10 @@ Machine learning is a:
 
 Machine learning is especially good at tackeling problems where **you cannot code the rules** and **you cannot scale**.
 
+<p align="center">
+  <img width="350" alt="" src="images/spamFilter.jpg">
+</p>
+
 Some examples we've talked about are:
 * Classifying emails as spam
 * Recognizing hand written letters
@@ -35,10 +39,6 @@ Some examples we've talked about are:
 
 **Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.**
 
-**Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
-
-**Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
-
 Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data and would be considered an annotated or labeled training dataset.
 
 | patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
@@ -46,17 +46,21 @@ Here's an example training dataset for predicting whether or not a patient might
 | HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
 | HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
 
-**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction.
+**Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
 
-In this case: `patient_Id`, `age`, `htn`, `treat`, `smoking`, `race`, `t2d`, `gender`, `numAge`, `bmi`, `tchol`, and `sbp`, and `cvd`.
+**Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
+
+**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction. Since this is a training set one of the variables included is the label that we are trying to predict (`cvd`).
 
 **Inputs:** Features that we have collected and will use to make our prediction. In this dataset our inputs would be all of the columns except `patient_Id` and `cvd`. We would likely remove `pateint_Id` because a random identifier won't have any predictive power and `cvd` would not be included as an input since it is the target we are trying to predict.
 
 **Output:** The variable that we are trying to predict. In this case `cvd`.
 
-Obviously this fairly simple dataset will not capture all the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only training and testing will prove if this dataset is capable of creating an accurate and generalizable model.
-
 ### An overview of supervised learning
+
+<p align="center">
+  <img align="middle" width="400" src="images/supervised.png">
+</p>
 
 The goal of supervised machine learning is to fit a model that relates response variables to predictors and can accurately predict the response for future observations of predictor variables. We will cover supervised learning more in depth in class 2 of this series.
 
@@ -92,6 +96,14 @@ There are two subclasses of supervised learning:
 * Output: The actual character
 * Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
 
+### How do you train and test a machine?
+
+Training is the hallmark of a supervised learning algorithm because this is the step where a 'supervisor' essentially gives the machine the answers. A machine is trained by feeding it large labeled datasets (aka training or validation sets) like we just learned about above. The algorithm works by finding patterns in the dataset and building it's own set of rules to determine what the outcome might be based on new inputs. When we say large we mean that these training sets should have at a minimum tens of thousands of rows. The more data the better.
+
+Going back to our example of identifying spam emails, a user would provide an algorithm tens of thousands of emails along with whether or not that email is spam or not. If training is effective when given a new email the algorithm should be able to accurately predict whether or not it is spam.
+
+Testing occurs after you have trained your model. A testing dataset will be similar to the training dataset in that it will have the same features that the algorithm uses to make it's prediction. The training data must be kept seperate from the data that the algorithm was trained on.
+
 ### Training a machine starts with data collection
 
 All supervised learning algorithms require large training and testing datasets. 
@@ -105,16 +117,6 @@ Creating labeled datasets is one of the most time intensive pieces of supervised
 We will take a more in depth look at what makes a good dataset in class 4 when we discuss exploratory data analysis and ethics.
 
 Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private because it is so valuable.
-
-### How do you train a machine?
-
-Training is the hallmark of a supervised learning algorithm because this is the step where a 'supervisor' essentially gives the machine the answers. A machine is trained by feeding it large labeled datasets (aka training or validation sets) like we just learned about above. The algorithm works by finding patterns in the dataset and building it's own set of rules to determine what the outcome might be based on new inputs. When we say large we mean that these training sets should have at a minimum tens of thousands of rows. The more data the better.
-
-Going back to our example of identifying spam emails, a user would provide an algorithm tens of thousands of emails along with whether or not that email is spam or not. If training is effective when given a new email the algorithm should be able to accurately predict whether or not it is spam.
-
-### How do you test a machine?
-
-**Need better info on testing**
 
 ### Generalization, overfitting, and underfitting
 
@@ -190,19 +192,68 @@ Feature importance is a commonly used method to summarize the inner workings of 
 
 The above image summarizes the feature importance for each feature in the tree above.
 
+### Testing a classification algorithm
+
+A confusion matrix (also known as an error matrix) is a way to test the accuracy of your model. A confusion matrix summerizes the results of the classification algorithm by highlighting false positives, false negatives, true positives, and true negatives.
+
+False positives and negatives are where the machine got the answer wrong and true positives and negatives are when the machine got the answer correct.
+
+Below is an example of a confusion matrix for an algorithm that predicts whether or not an image is a cat or a dog.
+
+**add image here**
+<p align="center">
+  <img width="600" alt="" src="">
+</p>
+
+There are many different metrics that can be derived from a confusion matrix. 
+
+The most simple and obvious metric is accuracy. This is a measure of how often the machine guesses if a picture is a cat or a dog correctly. Accuracy as a metric has many problems, especially if the testing dataset is skewed. For example, if the dataset is made up of 95 cats and 5 dogs and the machine guesses 'cat' 100% of the time it would still have a 95% accuracy.
+
+You could further interrogate the above problem by evaluating the sensitivity of the algorithm. Sensitivity measures the true positive rate and would show that the algorithm has 100% sensitivity for cat pictures and 0% sensitivity for dog pictures.
+
 ### Regression
 
 Regression is a form of supervised learning that predicts a continuous numerical value. 
 * Linear regression: Aims to draw a straight best fit line through a field of data points. 
 * Polynomial regression: Aims to draw a curved best fit line trhough a field of data points.
 
+*Linear regression* and *polynomial regression* are two kinds of regression methods.
+
 ### Linear regression (AKA ordinary least squares)
 
-This is the most simple form of regression. The linear regression aims to minimize the mean squared error between prediction variables and the true output variable. The mean squared error is the sum of the squared differences between the predictions and the true values, divided by the number of samples.
+<p align="center">
+  <img width="400" alt="" src="images/meansqerror.png">
+</p>
 
-**Need some info on evaluation like R2**
+This is the most simple form of regression. The linear regression aims to fit a straight line onto the data that minimizes the mean squared error between the predicted value and the true output value. The mean squared error is the sum of the squared differences between the predictions and the true values, divided by the number of samples.
 
-### Polynomial regression
+You can also use polynomials to model curvature and interaction effects.
+
+Ordinary least squares regressions are very sensitive to outliars!
+
+### Testing a regression algorithm
+
+Similarly to classification algorithms, there are many different metrics that can be used when testing and tuning a regression algorithm.
+
+Some common choices include:
+* Mean Squared Error (MSE)
+* Root Mean Squared Error (RMSE)
+* Mean Absolute Error (MAE)
+* R Squared (R²)
+* Adjusted R Squared (R²)
+* Mean Square Percentage Error (MSPE)
+* Mean Absolute Percentage Error (MAPE)
+* Root Mean Squared Logarithmic Error (RMSLE)
+
+Which metric you will use will be highly dependent on the context in which you're evaluating your algorithm.
+
+#### R Squared (R^2) is one of the simplest evaluations of a regression
+
+R squared is a very basic indicator of 'goodness of fit'. It measures how well the regressions predictions approximate the real data points. An R squared of 1 indicates a perfect fit and an R squared of 0 indicates no correlation whatsoever.
+
+#### Mean squared error (MSE) is another common evaluator
+
+Here the average squared value of the difference between estimated values and actual values. It measures the quality of the estimator. MSE is always a non-zero number and the closer to zero it is the better the fit.
 
 ### Practice with problem statements
 
