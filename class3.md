@@ -87,7 +87,7 @@ There are two kinds of supervised learning
 
 #### Challenge!
 
-You might have noticed that the second exammple is *almost* identical to yesterdays.
+You might have noticed that the second exammple is *almost* identical to last classes.
 
 > #### Identifying handwritten letters
 >
