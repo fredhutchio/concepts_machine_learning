@@ -209,7 +209,7 @@ It's important to think critically about what features we want to include in our
 ### An overview of supervised learning
 
 <p align="center">
-  <img align="middle" width="600" src="images/supervised.png">
+  <img align="middle" width="400" src="images/supervised.png">
 </p>
 
 The goal of supervised machine learning is to fit a model that relates response variables to predictors and can accurately predict the response for future observations of predictor variables. We will cover supervised learning more in depth in class 2 of this series.
@@ -227,7 +227,7 @@ There are two subclasses of supervised learning:
 ### An overview of unsupervised learning
 
 <p align="center">
-  <img align="middle" width="600" src="images/unsupervised.png">
+  <img align="middle" width="400" src="images/unsupervised.png">
 </p>
 
 The goal of unsupervised learning is to explore a dataset and discover similarities between objects. These similarities define groups of objects (AKA clusters). Unlike with supervised learning, these algorithms do not require labled example datasets to train on. Instead the algorithm works by grouping together objects based on similarities in can find in the dataset. We will dive deeper into unsupervised learning in class 3 of this series.
@@ -237,8 +237,8 @@ Unsupervised learning results can be harder to interpret than supervised machine
 Further, because there is no need for labeled data, unsupervised algorithms only have one step: fitting. Unsupervised machine learning algorithms have underlying models that they use to determine how similar objects are and create groupings. Fitting is the stage where the algorithm runs the data through the model.
 
 There are two subclasses of unsupervised machine learning:
-Unsupervised transformations: Create a new representation of a complex dataset that is easier to understand than the original.
-Clustering: Partition data into distinct groups of similar objects.
+1. Unsupervised transformations: Create a new representation of a complex dataset that is easier to understand than the original.
+2. Clustering: Partition data into distinct groups of similar objects.
 
 #### Challenge!
 Determine whether the following problem statements are supervised or unsupervised machine learning.
