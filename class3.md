@@ -69,7 +69,7 @@ There are two kinds of supervised learning
 #### Clustering similar images
 
 <p align="center">
-  <img width="350" alt="" src="images/clusteringImages.png">
+  <img width="600" alt="" src="images/clusteringImages.png">
 </p>
 
 * Input: Images from a google search for the term "Cookies"
