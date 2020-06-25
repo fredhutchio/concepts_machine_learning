@@ -196,28 +196,43 @@ The above image summarizes the feature importance for each feature in the tree a
 
 A confusion matrix (also known as an error matrix) is a way to test the accuracy of your model. A confusion matrix summerizes the results of the classification algorithm by highlighting false positives, false negatives, true positives, and true negatives.
 
-False positives and negatives are where the machine got the answer wrong and true positives and negatives are when the machine got the answer correct.
+Below is an example of a confusion matrix for a binary classifier.
 
-Below is an example of a confusion matrix for an algorithm that predicts whether or not an image is a cat or a dog.
-
-**add image here**
 <p align="center">
-  <img width="600" alt="" src="">
+  <img width="400" alt="" src="confusion.png">
 </p>
 
-There are many different metrics that can be derived from a confusion matrix. 
+In this very basic example there are two possible predicted classes: "yes" and "no". We could imagine this classifier might be predicting the presence of a disease where "yes" means that a patient has the disease.
 
-The most simple and obvious metric is accuracy. This is a measure of how often the machine guesses if a picture is a cat or a dog correctly. Accuracy as a metric has many problems, especially if the testing dataset is skewed. For example, if the dataset is made up of 95 cats and 5 dogs and the machine guesses 'cat' 100% of the time it would still have a 95% accuracy.
+What can we learn from this matrix?
+* This classifier made a total of 165 predictions (e.g., 165 patients were being tested for the presence of that disease).
+* Out of those 165 cases, the classifier predicted "yes" 110 times, and "no" 55 times.
+* In reality, 105 patients in the sample have the disease, and 60 patients do not.
+
+Confusion matrix terminology:
+* true positives (TP): These are cases in which we predicted yes (they have the disease), and they do have the disease.
+* true negatives (TN): We predicted no, and they don't have the disease.
+* false positives (FP): We predicted yes, but they don't actually have the disease. (Also known as a "Type I error.")
+* false negatives (FN): We predicted no, but they actually do have the disease. (Also known as a "Type II error.")
+
+There are many different metrics that can be derived from a confusion matrix. Two of the most basic metrics are *accuracy* and the *error rate* of a classifier.
+* Accuracy: A measure of how often the machine guesses correctly
+  * `(TP+TN)/total = (100+50)/165 = 0.91`
+* Error rate: A measure of how often the machine guesses incorrectly
+  * `(FP+FN)/total = (10+5)/165 = 0.09`
+  * Equivalent to `1 - Accuracy`
 
 You could further interrogate the above problem by evaluating the sensitivity of the algorithm. Sensitivity measures the true positive rate and would show that the algorithm has 100% sensitivity for cat pictures and 0% sensitivity for dog pictures.
 
 ### Regression
 
+<p align="center">
+  <img width="400" alt="" src="images/regression.jpg">
+</p>
+
 Regression is a form of supervised learning that predicts a continuous numerical value. 
 * Linear regression: Aims to draw a straight best fit line through a field of data points. 
-* Polynomial regression: Aims to draw a curved best fit line trhough a field of data points.
-
-*Linear regression* and *polynomial regression* are two kinds of regression methods.
+* Polynomial regression: Aims to draw a curved best fit line through a field of data points.
 
 ### Linear regression (AKA ordinary least squares)
 
