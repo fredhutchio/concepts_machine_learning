@@ -31,6 +31,29 @@ Some examples we've talked about are:
 * Predicting a patients clinical outcome
 * Clustering cells by cell type based on genetic data
 
+### Review! Anatomy of a machine learning problem
+
+**Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.**
+
+Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data and would be considered an annotated or labeled training dataset.
+
+| patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
+| ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
+| HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
+| HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
+
+**Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
+
+**Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
+
+**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction. Since this is a training set one of the variables included is the label that we are trying to predict (`cvd`).
+
+**Inputs:** Features that we have collected and will use to make our prediction. In this dataset our inputs would be all of the columns except `patient_Id` and `cvd`. We would likely remove `pateint_Id` because a random identifier won't have any predictive power and `cvd` would not be included as an input since it is the target we are trying to predict.
+
+**Output:** The variable that we are trying to predict. In this case `cvd`.
+
+**Object:** An object is the variable we are trying to cluster on. In this case we might want to cluster patients to identify subgroups or outliars so `patient_Id` would represent each object. 
+
 ### What is unsupervised machine learning?
 
 The goal of unsupervised learning is to detect the underlying structure and patterns in a dataset with no pre-existing labels. The lack of pre-existing labels means that the algorithm is able to work with minimal human supervision which is why we call these methods 'unsupervised'.
@@ -43,14 +66,14 @@ There are two kinds of supervised learning
 
 ### Some basic examples of supervised machine learning
 
-#### Clustering images by person
+#### Clustering similar images
 
 <p align="center">
-  <img width="350" alt="" src="">
+  <img width="600" alt="" src="images/clusteringImages.png">
 </p>
 
-* Input: Images of people's faces (Ex: the [Labeled Faces in the Wild dataset](https://www.kaggle.com/jessicali9530/lfw-dataset))
-* Output: Images sorted so that each unique face found in the dataset has its own folder
+* Input: Images from a google search for the term "Cookies"
+* Output: Similar images sorted into groups
 
 #### Grouping handwritten letters
 
@@ -64,7 +87,7 @@ There are two kinds of supervised learning
 
 #### Challenge!
 
-You might have noticed that the second exammple is *almost* identical to yesterdays.
+You might have noticed that the second exammple is *almost* identical to last classes.
 
 > #### Identifying handwritten letters
 >
@@ -80,7 +103,7 @@ You might have noticed that the second exammple is *almost* identical to yesterd
 
 * Clustering is the organization of unlabled data into groups (clusters) based on how similar they are. 
 * Clustering is a task that can be accomplished by various algorithms that differ in how they understand what constitutes a cluster and how they find clusters.
-* k-means and hierarchical clustering are two common examples of clustering
+* *k-mean clusterings* and *hierarchical clustering* are two common examples of clustering
 
 ### Hard vs soft clustering
 
