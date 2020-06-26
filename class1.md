@@ -250,12 +250,12 @@ Determine whether the following problem statements are supervised or unsupervise
 
 [click here to go to solutions page](https://github.com/fredhutchio/concepts_machine_learning/blob/master/solutions/class1_solutions.md#determine-which-of-the-following-questions-are-supervised-and-unsueprvised-machine-learning-problems)
 
-### Wrapping up
+## Wrapping up
 
 Today, we briefly explored some of the main ideas we will be covering throughout this course including exploratory data anlysis, dataset collection, and supervised and unsupervised learning concepts and methods. For further reading on these topics check out the optional materials below.
 
 Next week we will dive deeper into supervised learning. We will discuss more about data collection and how it relates to supervised learning, examine classifcation and regression methods, practice identifying and writing problem statements, and discuss common issues with supervised machine learning like over-fitting.
 
-### Optional material
+## Extra materials
 
 * Tarca, Adi L et al. “Machine learning and its applications to biology.” PLoS computational biology vol. 3,6 (2007): e116. doi:10.1371/journal.pcbi.0030116[](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1904382/)
