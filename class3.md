@@ -70,7 +70,7 @@ There are two kinds of supervised learning that we will talk about today:
 1. Unsupervised transformations: Create a new representation of a complex dataset that is easier to understand than the original.
 2. Clustering: Partition data into distinct groups of similar objects.
 
-### Some basic examples of supervised machine learning
+### Some basic examples of unsupervised machine learning
 
 #### Clustering similar images
 
@@ -113,6 +113,15 @@ The main challenge of unsupervised learning is that it can be difficult to tell 
 
 Consider the above output from a dimensionality reduction method called t-Distributed Stochastic Neighbor Embedding (t-SNE). Here we are automatically clustering cells based on their RNA-sequencing results. You'll notice that while each cluster is uniquely colored we are given no information about why they are clustered this way other than the machine picked up some underlying pattern in their RNA-sequencing results. It is up to the investigator to further interrogate these clusters to figure out if there is a meaningful difference between these clusters.
 
+One way to derive meaning from these clusters is to apply labels after the fact and see if there are any patterns in the visualization. Lets take a look at an example of this below.
+
+<p align="center">
+  <img src="images/seurat.png" width="350" />
+  <img src="images/seurat2.png" width="350" /> 
+</p>
+
+Here we have a PCA of single-cell RNA-sequencing samples from the analysis package [Seurat](https://satijalab.org/seurat/). On the left, all the data points are labled as `10X_PBMC`. This denotes that all of these cells are peripheral blood mononuclear cells sequenced with 10X Genomics sequencer. On the right we have the exact same PCA plot, but the points are labeled based on how highly they are expressing the gene `MS4A1`. This might be a gene of high importance to the researcher and the fact that there is a cluster of cells expressing this gene highly might have some significance. Again, further investigation is required to make any quantitative statements about this.
+
 ### When to use unsupervised learning
 
 Due to the challenges we discussed above, unsupervised learning is generally used in an exploratory step of analysis. 
@@ -127,8 +136,6 @@ Common applications of unsupervised learning:
 * Clustering is the organization of unlabled data into groups (clusters) based on how similar they are. 
 * Clustering is a task that can be accomplished by various algorithms that differ in how they understand what constitutes a cluster and how they find clusters.
 * *centroid based clustering* and *hierarchical clustering* are two different types of clustering.
-
-#### Hard vs soft clustering
 
 ### Connectivity-based clustering (heirarchical)
 
@@ -150,19 +157,89 @@ These algorithms connect "objects" to form "clusters" based on their [distance](
 ### Centroid-based clustering
 
 
+### K-means clustering
+
+K-means clustering is one of the most simple and commonly used clustering algorithms. It works by finding "cluster centers" that represent certain regions of the data. The algorithm knows how many clusters to look for because the analyist will specify it as a paremeter. 
+
+#### A walkthrough of K-means clustering
+
+<p align="center">
+  <img width="500" alt="" src="images/kmeans.png">
+</p>
+
+* Cluster centers are shown as triangles
+* Data points are shown as circles
+* Colors indicate cluster membership. 
+  * The analyst specified three clusters, so the algorithm was initialized by declaring three data points randomly as cluster centers (see “Initialization”).
+* Then the iterative algorithm starts.
+  * First, each data point is assigned to the cluster center it is closest to (see “Assign Points (1)”).
+  * Next, the cluster centers are updated to be the mean of the assigned points (see “Recompute Centers (1)”).
+  * Then the process is repeated two more times. 
+  * After the third iteration, the assignment of points to cluster centers remained unchanged, so the algorithm stops.
+
+#### Challenges with K-means clustering
+
+K-means clusters are defined solely by its center. This means that each cluster is a convex, or circular, shape. As a result, k-means is limited to capturing relatively simple shapes. It's also worth noting that k-means assumes that all clusters have the same "diameter" and always draws the boundary between clusters to be exactly in the middle between the cluster centers.
+
+<p align="center">
+  <img width="500" alt="" src="images/kmeansFail.png">
+</p>
+
+Above is an example case where k-means fails to capture two obvious clusters.
 
 ### The curse of dimensionality
 
+### Unsupervised transformations
+
+Algorithms that do unsupervised transformations of a dataset create a new representation of the data that is easier for humans or other algorithms to understand compared to the original representation. A very common application of this is dimensionality reduction. This is when a high-dimensional representation of the data, consisting of many features, is represented in a way that summerizes the essential characteristics with fewer features. Dimensionality reduction is commonly used to reduce a highly dimensional dataset to two dimensions for visualization purposes.
+
+Unsupervised transformations can also be used to find parts or components that make up the data. An example of this is topic extraction on a collection of text documents. The task here is to find out which topics are discussed in each document. This can be used to track discussion of themes like elections or pop-stars on social media.
+
 ### Dimensionality reduction
+
+As mentioned previously, dimensionality reduction's most common motivation is visualization, compressing the data, and finding a representation that is more informative for further processing. 
+
+One of the simplest and most widely used algorithms for all of these is principal component analysis. Other methods are non-negative matrix factorization (NMF), which is commonly used for feature extraction, and t-SNE, which is commonly used for visualization using two-dimensional scatter plots.
 
 ### Principle componant analysis (PCA)
 
-### Evaluation and interpretation of unsupervised learning methods
+Principal component analysis is a method that rotates the dataset in a way such that the rotated features are statistically uncorrelated. This rotation is often followed by selecting only a subset of the new features, according to how important they are for explaining the data.
 
-### Review!
+#### PCA is most often used to visualize high-dimensional datasets. 
 
-### Next Class
+It's very easy to visualize and make sense of 2-dimensional data. You might plot weight against height or miles per gallon against car price to gain some insight on how those two variables correlate. This becomes tricky when datasets have more than two variables. You might be able to visualize dataset with less than ten variables using a [pair plot]() to gain some insight. Pair plots work by giving us a partial picture of the data by showing us all the possible combinations of two features. This kind of visualization doesn't scale. Imagine a relatively small dataset with 30 features. A pair plot of this dataset would result in 435 different scatter plots. We'd never be able to look at this plot in detail and make sense of it.
 
-### Reading
+One of the most common applications of PCA is visualizing high-dimensional datasets. As we saw in Chapter 1, it is hard to create scatter plots of data that has more than two features. For the Iris dataset, we were able to create a pair plot (Figure 1-3 in Chapter 1) that gave us a partial picture of the data by showing us all the possible combinations of two features. But if we want to look at the Breast Cancer dataset, even using a pair plot is tricky. The breast cancer dataset has 30 features, which would result in 30 * 29 / 2 = 435 scatter plots (for just the upper triangle)! We’d never be able to look at all these plots in detail, let alone try to understand them.
+
+#### A walkthrough of PCA
+
+<p align="center">
+  <img width="500" alt="" src="images/pca.png">
+</p>
+
+**The first plot (top left) shows the original data points, colored to distinguish among them.**
+* First, the algorithm finds the direction of maximum variance, labeled "Component 1".
+  * This is the direction (or vector) in the data that contains the most information.
+* Then the algorithm finds the direction that contains the most information while being at a right angle to the first direction.
+  * In 2-dimensional space there is only one possible orientation of a right angle.
+  * In highly dimensional space there would be an infinite number of possible right angles.
+* The directions found during this process are called principal components. They are the main directions of variance in the data.
+* Generally, there are as many principal components as original features in the dataset.
+
+**The second plot (top right) shows the same data, but now rotated so that the first principal component aligns with the x-axis and the second principal component aligns with the y-axis.**
+
+
+**The third plot (bottom left) shows how we might use PCA by retaining only some of the principal components.**
+
+**In the last panel (bottom right)
+Before the rotation, the mean was subtracted from the data, so that the transformed data is centered around zero. In the rotated representation found by PCA, the two axes are uncorrelated, meaning that the correlation matrix of the data in this representation is zero except for the diagonal.
+
+We can use PCA for dimensionality reduction by retaining only some of the principal components. In this example, we might keep only the first principal component, as shown in the third panel in Figure 3-3 (bottom left). This reduces the data from a two-dimensional dataset to a one-dimensional dataset. Note, however, that instead of keeping only one of the original features, we found the most interesting direction (top left to bottom right in the first panel) and kept this direction, the first principal component.
+
+Finally, we can undo the rotation and add the mean back to the data. This will result in the data shown in the last panel in Figure 3-3. These points are in the original feature space, but we kept only the information contained in the first principal component. This transformation is sometimes used to remove noise effects from the data or visualize what part of the information is retained using the principal components.
+
+## Wrapping up
+
+## Extra Materials
 
 https://idyll.pub/post/dimensionality-reduction-293e465c2a3443e8941b016d/
