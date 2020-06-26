@@ -278,7 +278,7 @@ Today, we covered some of the main topics of supervised learning. We discussed t
 
 Next class we will review concepts from the first two classes and cover unsupervised machine learning methods for clustering and dimensionality reduction.
 
-### Extra materials
+## Extra materials
 
 [Yee, S., &amp; Chu, T. (2015). A visual introduction to machine learning. Retrieved June 22, 2020, from http://www.r2d3.us/visual-intro-to-machine-learning-part-1/](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
 * An animated, scrolling walkthrough of a decision tree.
