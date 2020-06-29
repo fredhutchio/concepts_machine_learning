@@ -5,12 +5,12 @@
 
 Welcome to Concepts in Machine Learning from fredhutch.io! This course is designed for researchers who are interested in machine learning, and assumes no prior programming or statistics experience. There are no prerequisites for this course.
 
-This course will introduce you to machine learning and give a broad overview of supervised and unsupervised machine learning methods. The goal of this course is to provide some conceptual background for our Machine Learning in R and Python series. Further, researchers who complete this course should have an understanding of how machine learning can be applied in biology research.
+This course will introduce you to machine learning and focus specifically on supervised and unsupervised machine learning methods. Further, researchers who complete this course should have an understanding of how machine learning can be applied in biology research. The goal of this course is to provide some conceptual background for our Intermediate R and Python courses in Machine Learning.
 
 By the end of this course you should be able to:   
 
-* Identify how machine learning can be applied in biology research and form a problem statement.
-* Apply the concepts of exploratory data analysis, experimental design, and ethics machine learning.
+* Identify how machine learning can be applied in biology research.
+* Apply the concepts of exploratory data analysis, experimental design, and ethics in machine learning.
 * Recognize the four main paradigms of machine learning as supervised, unsupervised, semi-supervised, and reinforcement learning.
 * Differentiate between common approaches and methods for supervised and unsupervised machine learning.
 * Recognize and have a basic understanding of common approaches to supervised (regression, classification) and unsupervised (clustering, dimensionality reduction) machine learning.
@@ -44,23 +44,17 @@ Like any new technique that gains traction and buzz in the field, suddenly every
 
 ### What **is** machine learning?
 
-Recent advances in compute power, cloud technologies, data collection and data generation have thrust machine learning into the mainstream. Increasingly machine learning is looked to as a tool to solve Big Complex Problems like cancer. Often though the term machine learning is used as a sort of black box, but what actually is machine learning?
+Recent advances in compute power, cloud technologies, data collection and data generation have thrust machine learning into the mainstream. Increasingly machine learning is looked to as a tool to solve big complex problems like cancer. Often though the term machine learning is used as a sort of black box, but what actually is machine learning?
 
-Let’s orient ourselves to the terms I mentioned in the previous slides that you may be familiar with (ML, AI, Deep learning) to get a sense of how things fit together.
+Let’s orient ourselves to the terms mentioned above that you may be familiar with in popular culture to get a sense of how things fit together.
 
 <p align="center">
   <img align="middle" width="500" src="images/aiMlDl.png">
 </p>
 
-* AI is a term that embodies anything that enables computers to act more like humans.
-  * This is a whole field of knowledge like ‘biology’ or ‘chemistry’.
-* Machine learning is a field of study within AI.
-  * The focus of this field is on the extraction of patterns from large datasets.
-* Deep learning is an example of a collection of similar machine learning methods.
-  * It is a group of similar techniques that use neural networks to learn.
-  * There are other groups of related methods such as:
-    * support vector machines
-    * decision trees
+* Artificial intelligence (AI) is a term that embodies anything that enables computers to act more like humans. This is a field of knowledge like 'chemistry' or 'physics'.
+* Machine learning is a field of study within AI, similar to how molecular biology is a specific focus in biology. The focus of this field is on the extraction of patterns from large datasets.
+* Deep learning is an example of a collection of similar machine learning methods. Other examples of collections of machine learning methods include, decision trees and regressions.
 
 ### Machine learning defined
 
@@ -82,7 +76,7 @@ While these definitions vary slightly there are a few common themes to pull out:
 
 ### Machine learning as code
 
-When we think of machine learning and how it applies to code we can consider machine learning to be a specific way of programming computers.
+Machine learning principles are applied to data using computer code and the computational methods involve specific characteristics.
 
 * Most programming isn’t built to learn - it’s procedural
     * This is where a programmer builds out a set of rules. This set of rules is called an algorithm. This ruleset remains static unless the coder intervenes and specifies more rules. 
@@ -90,16 +84,18 @@ When we think of machine learning and how it applies to code we can consider mac
 
 > **Machine learning is an algorithm (or set of rules) that self adjusts based on the large datasets that it is given**
 
-#### Challenge!
+#### Challenge - Writing a protocol
 
-1. Write an algorithm/protocol/ruleset for making a PBJ sandwich
-2. Write an algorithm/protocol/ruleset for determining if an email is spam
+This challenge aims to illustrate the difference between writing a straightforward procedural algorithm versus writing a predictive algorithm. 
+
+1. Write an algorithm/protocol/ruleset for making a PBJ sandwich.
+2. Write an algorithm/protocol/ruleset for determining if an email is spam.
 
 [click here to go to solutions page](https://github.com/fredhutchio/concepts_machine_learning/blob/master/solutions/class1_solutions.md#write-an-algorithmprotocolruleset-for-making-a-pbj-sandwich)
 
 ### When to use machine learning
 
-Just like any other statistical method there are specific situations where applying machine learning is appropriate. Just as important as the algorithm itself is a solid understanding of experimental design, domain expertise in the problem area youre trying to solve, and an understanding of data governance and ethics.
+Just like any other statistical method there are specific situations where applying machine learning is appropriate.
 
 **You cannot code the rules:**
 * Tasks that cannot be solved using a simple, rule-based solution. 
@@ -109,28 +105,13 @@ Just like any other statistical method there are specific situations where apply
 **You cannot scale:**
 * You might be able to manually recognize a few hundred emails and decide whether they are spam or not. However, this task becomes tedious for millions of emails. ML solutions are effective at handling large-scale problems.
 
-### Biology is suited for machine learning
-
-<p align="center">
-  <img align="middle" width="600" src="https://imgs.xkcd.com/comics/dna.png">
-</p>
-
-In the past data generation had been a bottleneck in biology research but this is no longer true! Biology research is generating huge amounts of messy and complex data! Now the challenge is figuring out how to integrate datasets and find the underlying patterns to make sense of the massive amounts of data we currently have.
-
-Biology is suited for machine learning applications:
-* You cannot code the rules
-    * Biological systems are incredibly complex with many inputs leading to complex phenotypes. 
-    * Example: if you want to determine whether or not a patient is likely to get cancer we’d need to take many datasets into account (demographic data, health/nutrition data, family history, genetic data, etc). We cannot determine and code the rules for a computer to calculate if a person is likely to get cancer or not.
-
-* You cannot scale
-    * Our human brains cannot make sense of these huge integrated datasets or even just one of them.
-    * Example: a human looking at a series of bases would take years to make sense of the human genome. A computer can find patterns in our genome with relative ease.
+Just as important as the algorithm itself is a solid understanding of experimental design, domain expertise in the problem area youre trying to solve, and an understanding of data governance and ethics.
 
 ### How is machine learning applied?
 
 <img align="right" width="150" src="https://media.giphy.com/media/3oEduS0HyWuqR7kXL2/giphy.gif">
 
-Machine learning applications are all around us! Every time Spotify serves up a customized playlist or radio station based on the music that you like, Facebook loads your newsfeed, your phone autocorrects you, or you interact with a voice assitant like Siri, you are interacting with machine learning algorithms.
+Machine learning applications are all around us! Every time [Spotify serves up a customized playlist or radio station based on the music that you like](https://engineering.atspotify.com/2020/01/16/for-your-ears-only-personalizing-spotify-home-with-machine-learning/), [Facebook loads your newsfeed](http://www.slate.com/articles/technology/cover_story/2016/01/how_facebook_s_news_feed_algorithm_works.html), or [you interact with a voice assitant like Siri](https://www.wired.com/story/amazon-alexa-2018-machine-learning/), you are interacting with machine learning algorithms.
 
 Every-day applications:
 * Search engines
@@ -139,7 +120,24 @@ Every-day applications:
 * Social media feeds
 * Text prediction
 
-#### Machine learning techniques are becoming increasingly important to biological research.
+### Biomedical research can benefit from utilizing machine learning
+
+<p align="center">
+  <img align="middle" width="600" src="https://imgs.xkcd.com/comics/dna.png">
+</p>
+
+In the past data generation had been a bottleneck in biology research but this is no longer true! Biology research is generating huge amounts of messy and complex data! Now the challenge is figuring out how to integrate datasets and find the underlying patterns to make sense of the massive amounts of data we currently have.
+
+Machine learning is an appropriate approach for many biological questions:
+* You cannot code the rules
+    * Biological systems are incredibly complex with many inputs leading to complex phenotypes. 
+    * Example: if you want to determine whether or not a patient is likely to get cancer we’d need to take many datasets into account (demographic data, health/nutrition data, family history, genetic data, etc). We cannot determine and code the rules for a computer to calculate if a person is likely to get cancer or not.
+
+* You cannot scale
+    * Our human brains cannot make sense of these huge integrated datasets or even just one of them.
+    * Example: a human looking at a series of bases would take years to make sense of the human genome. A computer can find patterns in our genome with relative ease.
+
+### Machine learning techniques are becoming increasingly important to biological research.
 
 Researchers are developing algorithms that use machine learning to classify histopathological images, visualize and find clusters within single cell datasets, and much more.
 
@@ -153,30 +151,18 @@ Machine learning work that is happening here at Fred Hutch:
 * Emily Silgard's data science group - [natural language processing to extract information from unstructured electronic medical records notes.](https://www.sciencedirect.com/science/article/abs/pii/S1532046419302217)
 * The Data Visualization Center - [single-cell visualization and clustering of RNA-sequencing data to find rare subtypes of cells that emerge in the mouse embryo.](https://oncoscape.v3.sttrcancer.org/atlas.gs.washington.edu.mouse.rna/landing)
 
-### How do these machine learning applications work?
-
-There are different types of machine learning and each have their own specific applications and requirements.
-
-Four major paradigms in machine learning:
-* **Supervised**
-* **Unsupervised**
-* Semi-supervised
-* Reinforcement learning
-
-The focus of this course will be on supervised and unsupervised learning only, but it’s good to be aware that these are not the only types of machine learning. While increasingly complex machine learning algorithms are highlighted on TV and in the news, it's important to remember that the most commonly implemented form of machine learning is the simplest - supervised machine learning.
-
 ### Anatomy of a machine learning problem
 
-The purpose of using machine learning is generally to use data make an inference or prediction. To do this, these algorithms access large datasets with many features. Datasets rarely, if ever, will capture all of the complex underlying variables that result in the Truth that we see in the world. Datasets merely capture the features that we think are related to the system that we are trying to uncover and that we can adequately measure and track.
+The purpose of using machine learning is generally to use data make an inference or prediction. To do this, these algorithms access large datasets with many variables. Datasets rarely, if ever, will capture all of the complex underlying systems that result in the reality that we see in the world. Datasets merely capture variables that we think are related to the system that we are trying to uncover and that we can adequately measure and track.
 
-Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data together.
+Here's a peek at a portion of a training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. The full dataset contains 425,195 rows.
 
 | patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
 | ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
 | HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
 | HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
 
-You might have noticed that this fairly simple dataset will not capture *all* of the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only experimentation will show if this dataset is capable of creating an accurate and generalizable model.
+You might have noticed that this fairly small collection of features will not capture *all* of the complexities that lead to a diagnosis of cardiovascular disease, but it might capture enough variability to build a model and make accurate predictions. Only experimentation will show if this dataset is capable of creating an accurate and generalizable model.
 
 You'll notice that this dataset consists of variables that are very easy for someone to measure.
 
@@ -185,7 +171,10 @@ Variables that are difficult to measure that might be related to cardiovascular 
 * Dietary habits
 * Sleep habits
 
-It's important to think critically about what features we want to include in our datasets, what features might be missing, and identify features that may introduce biases into the analysis. We will discuss exploratory data analysis and ethics as key pieces of the machine learning process in class 4 of this series.
+It's important to think critically about what features we want to include in our datasets, what features might be missing, and identify features that may introduce biases into the analysis. We will discuss exploratory data analysis and ethics as key pieces of the machine learning process in class 4 of this course.
+
+> #### Note!
+> The dataset above is from the package `cvdRiskData`. you can find more information [here](https://github.com/laderast/cvdRiskData). We will be using this dataset as an example throughout this course.
 
 **Reality/truth:** A persons health history, location, occupation, diet, exercise habits, and stress levels, among many other things will play into if someone gets diagnosed with cardiovascular disease.
 
@@ -197,14 +186,26 @@ It's important to think critically about what features we want to include in our
 
 **Output:** The variable that we are trying to predict. In this case `cvd`.
 
-> #### Note!
-> The dataset above is from the package `cvdRiskData`. you can find more information [here](https://github.com/laderast/cvdRiskData). We will be using this dataset > as an example throughout this course.
+#### Challenge - Building a dataset
 
-#### Challenge! 
+The purpose of this challenge is to get students to think critically about identifying features that might be useful in building a model including the limitations that these features might introduce into the model.
+
 1. If we are trying to predict whether or not an animal is a cat or a dog what features might we collect?
-2. Are there any cases you can think of that might confuse your algorithm based on the features you've chosen?
+2. Are there any outlier cases you can think of that might confuse your model based on the features you've chosen?
 
 [click here to go to solutions page](https://github.com/fredhutchio/concepts_machine_learning/blob/master/solutions/class1_solutions.md#if-we-are-trying-to-predict-whether-or-not-an-animal-is-a-cat-or-a-dog-what-features-might-we-collect)
+
+### How do machine learning applications work?
+
+There are different types of machine learning and each have their own specific applications and requirements.
+
+Four major paradigms in machine learning:
+* **Supervised**: The machine learning task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from labeled training data consisting of a set of training examples.
+* **Unsupervised**: A type of machine learning that looks for previously undetected patterns in a data set with no pre-existing labels and with a minimum of human supervision.
+* Semi-supervised: An approach to machine learning that combines a small amount of labeled data with a large amount of unlabeled data during training. Semi-supervised learning falls between unsupervised learning (with no labeled training data) and supervised learning (with only labeled training data).
+* Reinforcement learning: An approach to machine learning concerned with how software algorithms ought to take actions in an environment in order to maximize the some reward.
+
+The focus of this course will be on supervised and unsupervised learning only, but it’s good to be aware that these are not the only types of machine learning. While increasingly complex machine learning algorithms are highlighted on TV and in the news, it's important to remember that the most commonly implemented form of machine learning is the simplest - supervised machine learning.
 
 ### An overview of supervised learning
 
@@ -254,7 +255,7 @@ Determine whether the following problem statements are supervised or unsupervise
 
 Today, we briefly explored some of the main ideas we will be covering throughout this course including exploratory data anlysis, dataset collection, and supervised and unsupervised learning concepts and methods. For further reading on these topics check out the optional materials below.
 
-Next week we will dive deeper into supervised learning. We will discuss more about data collection and how it relates to supervised learning, examine classifcation and regression methods, practice identifying and writing problem statements, and discuss common issues with supervised machine learning like over-fitting.
+Next class we will dive deeper into supervised learning. We will discuss more about data collection and how it relates to supervised learning, examine classifcation and regression methods, practice identifying and writing problem statements, and discuss common issues with supervised machine learning like over-fitting.
 
 ## Extra materials
 
