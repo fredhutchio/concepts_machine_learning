@@ -4,17 +4,16 @@
 
 Welcome to class 2 of Concepts in Machine Learning!
 
-In the last class, we touched on all of the main concepts that we will be covering in this course including supervised and unsupervised learning, exploratory data analysis, and ethics.
+In the last class, we touched on all of the main concepts that we will be covering in this course including supervised and unsupervised learning, exploratory data analysis, and ethics. 
 
-By the end of this class you should be able to:
+Today we will expand on our knowledge of supervised machine learning. By the end of this class you should be able to:
 
 * Define and understand the limitations of supervised learning
 * Differentiate between regression and classification
-* Assess whether or not supervised learning is an appropriate tool for a question
 * Understand basic applications of supervised learning (linear regression, logistic regression)
 * Create supervised learning problem statements
 
-### Review! What is machine learning?
+### Last class
 
 Machine learning is a:
 * field of study within the larger field of artificial intellegence
@@ -56,6 +55,11 @@ Here's an example training dataset for predicting whether or not a patient might
 
 **Output:** The variable that we are trying to predict. In this case `cvd`.
 
+
+
+
+
+
 ### An overview of supervised learning
 
 <p align="center">
@@ -76,16 +80,6 @@ There are two subclasses of supervised learning:
 
 ### Some basic examples of supervised machine learning
 
-#### Determining if a tumor is benign or not from an image
-
-<p align="center">
-  <img width="350" alt="" src="images/histopathBreast.jpg">
-</p>
-
-* Input: Images of tumors
-* Output: Binary; begign or malignant
-* Dataset: Need a database of medical images, expert diagnosis of benign or malignant
-
 #### Identifying handwritten letters
 
 <p align="center">
@@ -96,11 +90,21 @@ There are two subclasses of supervised learning:
 * Output: The actual character
 * Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
 
+#### Determining if a breast cancer tumor is benign or not from an image
+
+<p align="center">
+  <img width="350" alt="" src="images/histopathBreast.jpg">
+</p>
+
+* Input: Images of tumors
+* Output: Binary; benign or not
+* Dataset: Need a database of medical images, expert diagnosis of benign or malignant
+
 ### How do you train and test a machine?
 
 Training is the hallmark of a supervised learning algorithm because this is the step where a 'supervisor' essentially gives the machine the answers. A machine is trained by feeding it large labeled datasets (aka training or validation sets) like we just learned about above. The algorithm works by finding patterns in the dataset and building it's own set of rules to determine what the outcome might be based on new inputs. When we say large we mean that these training sets should have at a minimum tens of thousands of rows. The more data the better.
 
-Going back to our example of identifying spam emails, a user would provide an algorithm tens of thousands of emails along with whether or not that email is spam or not. If training is effective when given a new email the algorithm should be able to accurately predict whether or not it is spam.
+Let's go back to our example of determining if a breast tumor is benign or not. To create an adequate dataset to train on we'd need to collect tens of thousands of images of breast tumors. Then we would need an expert in the field to label each image as begign or not. Now that we have labeled images we can train our model. If training is effective our model should be able to accurately predict whether a breast tumor is benign or not when given unlabeled images it's never seen before.
 
 Testing occurs after you have trained your model. A testing dataset will be similar to the training dataset in that it will have the same features that the algorithm uses to make it's prediction. The training data must be kept seperate from the data that the algorithm was trained on.
 
@@ -127,7 +131,7 @@ If training and testing sets are similar enough, we would expect the model to be
 *Overfitting* occurs when a model is fitted too closely to the specific artifacts of a dataset. In this situation the model will work very well with training data but fail to generalize to new data.
 
 *Underfitting* occurs when a model is too simple to capture variability in the dataset. In this situation the model won't work well on the training set.
-* Example: "Everyone who smokes will get cancer" does not capture any of the variablity in possible outcomes.
+* Example: "Every tumor with a diameter grater than 10mm is not benign" does not capture any of the variablity in possible outcomes.
 
 ### Bias-variance trade off
 
@@ -158,15 +162,13 @@ The main difference between classification and regression is that classification
 
 ### Classification
 
-Classification aims to predict a class label, which is a choice from a predetermined list of possibilities.
-* Binary classification: Classifying into exactly two classes.
-* Multiclass classification: Classifying into more than two classes.
+Classification aims to predict a class label, which is a choice from a predetermined list of possibilities. When an algorithm is predicting between exactly two class labels we call it binary classification. When an algorithm predicts more than two class labels we call it multiclass classification.
 
-*Decision trees* and *support vector machines* are two kinds of classification methods.
+*Decision trees* and *support vector machines* are two kinds of classification methods. These methods are different in *how* they determine which class label to assign. We will focus in on decision trees going forward because they are one of the most simplistic forms of machine learning.
 
 ### Decision trees are a common form of classification
 
-Decision trees are widely used for both classification and regression tasks. The machine essentially learns a series of if/else questions that will lead to a decision. 
+Decision trees are widely used for both classification and regression tasks, but today we will focus on classification with decision trees. The machine essentially learns a series of if/else questions that will lead to a decision. 
 
 Creating a decision tree means the machine is creating the series of if/else questions that will most efficiently lead to the decision. Each of these if/else questions is called a 'test'. The machine learning algorithm iterates over all possible test sequences to find the tree that is most informative and accurate in predicting our target output variable.
 
