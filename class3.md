@@ -14,28 +14,15 @@ By the end of this class you should be able to:
 * Understand basic applications of unsupervised learning (PCA, Kmeans)
 * Create unsupervised learning problem statements
 
-### Review! What is machine learning?
+### Review of last class
 
 Machine learning is a:
 * field of study within the larger field of artificial intellegence
-* way of programming computers
 * an algorithm that incorporates large datasets into a statistical model and improves with experience
-
-### Review! When to use machine learning
-
-Machine learning is especially good at tackeling problems where **you cannot code the rules** and **you cannot scale**.
-
-Some examples we've talked about are:
-* Classifying emails as spam
-* Recognizing hand written letters
-* Predicting a patients clinical outcome
-* Clustering cells by cell type based on genetic data
-
-### Review! Anatomy of a machine learning problem
 
 **Example: we are trying to cluster patients to find if there are novel subgroupings within the dataset**
 
-Here we are looking at the exact same example dataset as last class. You'll notice that our intended outcome is slightly different than when we were using the dataset for supervised learning. Instead of predicting whether or not a patient is likely to be diagnosed with cardiovascular disease we want to explore the data for underlying patterns.
+Here we are looking at the exact same example dataset as the first class. You'll notice that our intended outcome is slightly different than when we were using the dataset for supervised learning. Instead of predicting whether or not a patient is likely to be diagnosed with cardiovascular disease we want to explore the data for underlying patterns.
 
 | patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
 | ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
@@ -156,6 +143,7 @@ These algorithms connect "objects" to form "clusters" based on their [distance](
 
 ### Centroid-based clustering
 
+These algorithms work by finding the specified number of centroids within the dataset. A centroid is the geometric center of a shape. These algorithms generally require that the analyst tell the machine how many clusters to look for.
 
 ### K-means clustering
 
@@ -187,8 +175,6 @@ K-means clusters are defined solely by its center. This means that each cluster 
 
 Above is an example case where k-means fails to capture two obvious clusters.
 
-### The curse of dimensionality
-
 ### Unsupervised transformations
 
 Algorithms that do unsupervised transformations of a dataset create a new representation of the data that is easier for humans or other algorithms to understand compared to the original representation. A very common application of this is dimensionality reduction. This is when a high-dimensional representation of the data, consisting of many features, is represented in a way that summerizes the essential characteristics with fewer features. Dimensionality reduction is commonly used to reduce a highly dimensional dataset to two dimensions for visualization purposes.
@@ -209,8 +195,6 @@ Principal component analysis is a method that rotates the dataset in a way such 
 
 It's very easy to visualize and make sense of 2-dimensional data. You might plot weight against height or miles per gallon against car price to gain some insight on how those two variables correlate. This becomes tricky when datasets have more than two variables. You might be able to visualize dataset with less than ten variables using a [pair plot]() to gain some insight. Pair plots work by giving us a partial picture of the data by showing us all the possible combinations of two features. This kind of visualization doesn't scale. Imagine a relatively small dataset with 30 features. A pair plot of this dataset would result in 435 different scatter plots. We'd never be able to look at this plot in detail and make sense of it.
 
-One of the most common applications of PCA is visualizing high-dimensional datasets. As we saw in Chapter 1, it is hard to create scatter plots of data that has more than two features. For the Iris dataset, we were able to create a pair plot (Figure 1-3 in Chapter 1) that gave us a partial picture of the data by showing us all the possible combinations of two features. But if we want to look at the Breast Cancer dataset, even using a pair plot is tricky. The breast cancer dataset has 30 features, which would result in 30 * 29 / 2 = 435 scatter plots (for just the upper triangle)! We’d never be able to look at all these plots in detail, let alone try to understand them.
-
 #### A walkthrough of PCA
 
 <p align="center">
@@ -227,18 +211,19 @@ One of the most common applications of PCA is visualizing high-dimensional datas
 * Generally, there are as many principal components as original features in the dataset.
 
 **The second plot (top right) shows the same data, but now rotated so that the first principal component aligns with the x-axis and the second principal component aligns with the y-axis.**
-
+This is a PCA plot of the first and second principal components.
 
 **The third plot (bottom left) shows how we might use PCA by retaining only some of the principal components.**
+This plot reduces the data from a two-dimensional dataset to a one-dimensional dataset. Note, that instead of keeping only one of the original features, we found the most interesting direction (top left to bottom right in the first panel) and kept this direction, the first principal component.
 
-**In the last panel (bottom right)
-Before the rotation, the mean was subtracted from the data, so that the transformed data is centered around zero. In the rotated representation found by PCA, the two axes are uncorrelated, meaning that the correlation matrix of the data in this representation is zero except for the diagonal.
-
-We can use PCA for dimensionality reduction by retaining only some of the principal components. In this example, we might keep only the first principal component, as shown in the third panel in Figure 3-3 (bottom left). This reduces the data from a two-dimensional dataset to a one-dimensional dataset. Note, however, that instead of keeping only one of the original features, we found the most interesting direction (top left to bottom right in the first panel) and kept this direction, the first principal component.
-
-Finally, we can undo the rotation and add the mean back to the data. This will result in the data shown in the last panel in Figure 3-3. These points are in the original feature space, but we kept only the information contained in the first principal component. This transformation is sometimes used to remove noise effects from the data or visualize what part of the information is retained using the principal components.
+**In the last panel (bottom right) we undo the rotation and add the mean back to the data**
+These points are in the original feature space, but we kept only the information contained in the first principal component. This transformation is sometimes used to remove noise effects from the data or visualize what part of the information is retained using the principal components.
 
 ## Wrapping up
+
+Today, we dug deeper into what unsupervised machine learning is and when it can be applied. We touched on both heirarchical and centroid-based clustering and principal component analysis for dimensionality reduction.
+
+Next class, is focused on exploratory data analysis and ethics in machine learning. These are crucial steps to setting up a successful machine learning application.
 
 ## Extra Materials
 
