@@ -4,57 +4,26 @@
 
 Welcome to class 2 of Concepts in Machine Learning!
 
-In the last class, we touched on all of the main concepts that we will be covering in this course including supervised and unsupervised learning, exploratory data analysis, and ethics.
+In the last class, we touched on all of the main concepts that we will be covering in this course including supervised and unsupervised learning, exploratory data analysis, and ethics. 
 
-By the end of this class you should be able to:
+Today we will expand on our knowledge of supervised machine learning. By the end of this class you should be able to:
 
 * Define and understand the limitations of supervised learning
 * Differentiate between regression and classification
-* Assess whether or not supervised learning is an appropriate tool for a question
 * Understand basic applications of supervised learning (linear regression, logistic regression)
 * Create supervised learning problem statements
 
-### Review! What is machine learning?
+### Review of last class
 
-Machine learning is a:
-* field of study within the larger field of artificial intellegence
-* way of programming computers
-* an algorithm that incorporates large datasets into a statistical model and improves with experience
+Machine learning is:
+* A field of study within the larger field of artificial intellegence
+* An algorithm that incorporates large datasets into a statistical model and improves with experience
+* Especially useful for tackeling problems where **you cannot code the rules** and that **you cannot scale**
 
-### Review! When to use machine learning
-
-Machine learning is especially good at tackeling problems where **you cannot code the rules** and **you cannot scale**.
-
-<p align="center">
-  <img width="350" alt="" src="images/spamFilter.jpg">
-</p>
-
-Some examples we've talked about are:
-* Classifying emails as spam
-* Recognizing hand written letters
-* Predicting a patients clinical outcome
-* Clustering cells by cell type based on genetic data
-
-### Review! Anatomy of a machine learning problem
-
-**Example: we are trying to predict whether or not someone will be diagnosed with cardiovascular disease.**
-
-Here's an example training dataset for predicting whether or not a patient might be diagnosed with cardiovascular disease. This dataset shows paired input and output data and would be considered an annotated or labeled training dataset.
-
-| patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
-| ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
-| HHUID00076230 | 20-40 | Y   | Y     | N       | Asian/PI | N   | M      | 29     | 23  | 189  | 170 | N   |
-| HHUID00547835 | 70-90 | N   | Y     | N       | White    | Y   | M      | 72     | 35  | 178  | 118 | N   |
-
-**Reality/truth:** a persons health history, location, occupation, diet, habits, stress levels, among many other things will play into if someone gets cardiovascular disease. 
-
-**Dataset:** when creating the dataset that will be used to make our predictions we will never capture the whole truth. We will capture as much of the truth as we can by collecting data on various features that we believe are related to the problem we are trying to solve. Many underlying factors that lead to the cardiovascular disease may be unknown or we might not be able to measure them or capture them in our dataset.
-
-**Features/variables:** These are the measurable data that make up our dataset. Some features collected might be useless while others might carry a substantial amount of weight in making the prediction. Since this is a training set one of the variables included is the label that we are trying to predict (`cvd`).
-
-**Inputs:** Features that we have collected and will use to make our prediction. In this dataset our inputs would be all of the columns except `patient_Id` and `cvd`. We would likely remove `pateint_Id` because a random identifier won't have any predictive power and `cvd` would not be included as an input since it is the target we are trying to predict.
-
-**Output:** The variable that we are trying to predict. In this case `cvd`.
+Machine learning algorithms make use of large datasets. These datasets consist of features, which are measurable metrics that relate to the problem we are trying to solve. Some or all of these features will be used as inputs to create a model that can predict some target output.
+* Last class we use the example of predicting whether or not a patient will be diagnosed with cardiovascular disease.
+* Age, gender, smoking status, bmi, choelstorol, among other variables were used to predict if a patient will be diagnosed with cardiovascular disease.
+* It's important to remember that these 7-10 features do not capture *every* factor that might result in someone being diagnosed with cardiovascular disease, but it may capture enough variablity to build a predictive model.
 
 ### An overview of supervised learning
 
@@ -76,16 +45,6 @@ There are two subclasses of supervised learning:
 
 ### Some basic examples of supervised machine learning
 
-#### Determining if a tumor is benign or not from an image
-
-<p align="center">
-  <img width="350" alt="" src="images/histopathBreast.jpg">
-</p>
-
-* Input: Images of tumors
-* Output: Binary; begign or malignant
-* Dataset: Need a database of medical images, expert diagnosis of benign or malignant
-
 #### Identifying handwritten letters
 
 <p align="center">
@@ -96,11 +55,23 @@ There are two subclasses of supervised learning:
 * Output: The actual character
 * Dataset: Need thousands of handwritten letters and to annotate the correct letter for each one
 
+#### Determining if a breast tumor is benign or not from an image
+
+<p align="center">
+  <img width="350" alt="" src="images/histopathBreast.jpg">
+</p>
+
+* Input: Images of tumors
+* Output: Binary; benign or not
+* Dataset: Need a database of medical images, expert diagnosis of benign or not
+
+>We will continue to use and expand upon this breast tumor example throughout this class!
+
 ### How do you train and test a machine?
 
 Training is the hallmark of a supervised learning algorithm because this is the step where a 'supervisor' essentially gives the machine the answers. A machine is trained by feeding it large labeled datasets (aka training or validation sets) like we just learned about above. The algorithm works by finding patterns in the dataset and building it's own set of rules to determine what the outcome might be based on new inputs. When we say large we mean that these training sets should have at a minimum tens of thousands of rows. The more data the better.
 
-Going back to our example of identifying spam emails, a user would provide an algorithm tens of thousands of emails along with whether or not that email is spam or not. If training is effective when given a new email the algorithm should be able to accurately predict whether or not it is spam.
+Let's go back to our example of determining if a breast tumor is benign or not from an image. To create an adequate dataset to train on we'd need to collect tens of thousands of images of breast tumors. Then we would need an expert in the field to look at the images and patient medical data to label each image as benign or not. Now that we have labeled images we can train our model. If training is effective our model should be able to accurately predict whether a breast tumor is benign or not when given unlabeled images it's never seen before.
 
 Testing occurs after you have trained your model. A testing dataset will be similar to the training dataset in that it will have the same features that the algorithm uses to make it's prediction. The training data must be kept seperate from the data that the algorithm was trained on.
 
@@ -118,16 +89,22 @@ We will take a more in depth look at what makes a good dataset in class 4 when w
 
 Data collection and labeling is an intensive process and it can be incredibly difficult to create a comprehensive, 'good', dataset. In fact, while some companies might release the source code for their machine learning algorithms, the underlying data that they use is generally kept private because it is so valuable.
 
+### Challenge - Data collection
+
+Let's consider our model for predicting if a breast tumor image is benign or not. What kind of features could we collect from each image to use in our prediction?
+
 ### Generalization, overfitting, and underfitting
 
-The goal in supervised learning is to build a model that can make accurate prediction on new, unseen datasets that have the same features of the test set used. A model that is capable of making accurate predictions on new data is called *genderalizable*. We want to create a model that can generalize as accurately as possible. 
+The goal in supervised learning is to build a model that can make accurate prediction on new, unseen datasets that have the same features of the test set used. A model that is capable of making accurate predictions on new data is called *generalizable*. We want to create a model that can generalize as accurately as possible. 
 
-If training and testing sets are similar enough, we would expect the model to be accurate on the training set. This might sound like a good thing, however, it can cause problems. We can always build a more and more complex model until we are almost 100 percent accurate on the training set, but the only way to truely test how well a model works on new data is by evaluation on a test set. Simple models will generalize better to new data.
+The goal in supervised learning is to build a model that can make accurate prediction on new, unseen datasets that have the same features of the test set used. A model that is capable of making accurate predictions on new data is called *generalizable*. We want to create a model that can generalize as accurately as possible. Like many of these terms, how generalizable a model is exists on a spectrum. We want our breast tumor predictor to generalize to unseen breast tumor images at a minimum. A best case scenario would be a model that accurately predicts whether or not a tumor is benign with images of tumors from other parts of the body.
+
+If training and testing sets are very similar, we would expect the model to be accurate on the testing set. This might sound like a good thing, however, it can cause problems. We can always build a more and more complex model until we are almost 100 percent accurate on the training set, but the only way to truely test how well a model works on new data is by evaluation on a test set. Simple models will generalize better to new data.
 
 *Overfitting* occurs when a model is fitted too closely to the specific artifacts of a dataset. In this situation the model will work very well with training data but fail to generalize to new data.
 
 *Underfitting* occurs when a model is too simple to capture variability in the dataset. In this situation the model won't work well on the training set.
-* Example: "Everyone who smokes will get cancer" does not capture any of the variablity in possible outcomes.
+* Example: "Every tumor with a diameter grater than 10mm is not benign" does not capture any of the variablity in possible outcomes.
 
 ### Bias-variance trade off
 
@@ -146,29 +123,30 @@ The ideal situation is one where performance is both highly accurate and general
 
 Model complexity is closely tied to the variation of inputs contained in the testing set. Variation can only be comprehensively captured by having very large datasets. You can avoid overfitting by increasing the size of the datasets and therefore increasing the variety of data points in your dataset.
 
-**An important note is that adding data points that are duplicates or very similar to those already captured in the dataset will not increase complexity**
+>#### Note!
+>Adding data points that are duplicates or very similar to those already captured in the dataset will not increase complexity
 
 ### Two kinds of supervised learning: classification and regression
-
-The main difference between classification and regression is that classification predicts a categorical variable and regression predicts a continuous numerical value.
 
 <p align="center">
   <img width="350" alt="" src="images/supervised.png">
 </p>
 
+The main difference between classification and regression is that classification predicts a categorical variable and regression predicts a continuous numerical value.
+
 ### Classification
 
-Classification aims to predict a class label, which is a choice from a predetermined list of possibilities.
-* Binary classification: Classifying into exactly two classes.
-* Multiclass classification: Classifying into more than two classes.
+Classification aims to predict a class label, which is a choice from a predetermined list of possibilities. When an algorithm is predicting between exactly two class labels we call it binary classification. When an algorithm predicts more than two class labels we call it multiclass classification.
 
-*Decision trees* and *support vector machines* are two kinds of classification methods.
+*Decision trees* and *support vector machines* are two kinds of classification methods. These methods are different in *how* they determine which class label to assign. We will focus in on decision trees going forward because they are one of the most simplistic forms of machine learning.
+
+If you'd like to read more about support vector machines check [this link]() out!
 
 ### Decision trees are a common form of classification
 
-Decision trees are widely used for both classification and regression tasks. The machine essentially learns a series of if/else questions that will lead to a decision. 
+Decision trees are widely used for both classification and regression tasks, but today we will focus on classification with decision trees. 
 
-Creating a decision tree means the machine is creating the series of if/else questions that will most efficiently lead to the decision. Each of these if/else questions is called a 'test'. The machine learning algorithm iterates over all possible test sequences to find the tree that is most informative and accurate in predicting our target output variable.
+Building a decision tree means the machine is creating the series of if/else questions that will most efficiently lead to the classification decision. Each of these if/else questions is called a 'test'. The machine learning algorithm iterates over all possible test sequences to find the tree that is most informative and accurate in predicting our target output variable.
 
 You can see how it would be fairly easy to overfit a decision tree. We can keep adding more and more decisions until our training set is perfectly sorted. Two ways to mitigate this with decision trees are:
 1. Pruning: Removing or collapsing nodes that contain very little information at the bottom of the tree.
@@ -178,42 +156,40 @@ You can see how it would be fairly easy to overfit a decision tree. We can keep 
   <img width="600" alt="" src="images/decisionTreeBreastCancer.png">
 </p>
 
-Above is a decision tree built on a breast cancer dataset to predict whether or not a tumor is malignant or benign. This is a relatively small tree with a depth of four and it's already a bit overwhelming to make sense of. Trees with a depth of ten are not uncommon and can be even more difficult to grasp.
+Above is a decision tree built on a breast cancer dataset to predict whether or not a tumor is malignant or benign. This is a relatively small tree with a depth of four and it's already a bit overwhelming to make sense of. Trees with a depth of ten are not uncommon and are even more difficult to grasp.
 
 It can be helpful to orient yourself by finding out which paths of the tree most data points take. You can assess this on the image above by looking at the `samples` variable shown in each node.
 
 ### Feature importance to summarize useful properties in a tree
 
-Feature importance is a commonly used method to summarize the inner workings of a decision tree. It captures how important each feature is for the decision the tree makes. It is always a number between 0 and 1, where 0 means a feature wasn't used at all and 1 means the feature perfectly predicts the target outcome. The feature importance of each feature should always add up to 1.
+Feature importance is a method to summarize the inner workings of a decision tree. It captures how important each feature is for the decision the tree makes. It is always a number between 0 and 1, where 0 means a feature wasn't used at all and 1 means the feature perfectly predicts the target outcome. The feature importance of each feature should always add up to 1.
 
 <p align="center">
   <img width="600" alt="" src="images/featureImportance.png">
 </p>
 
-The above image summarizes the feature importance for each feature in the tree above.
+The above image summarizes the feature importance for each feature in the decision tree we discussed previously.
 
 ### Testing a classification algorithm
 
 A confusion matrix (also known as an error matrix) is a way to test the accuracy of your model. A confusion matrix summerizes the results of the classification algorithm by highlighting false positives, false negatives, true positives, and true negatives.
 
-Below is an example of a confusion matrix for a binary classifier.
+Below is an example of a confusion matrix for the breast tumor classifier that we have been using as an example.
 
-<p align="center">
-  <img width="400" alt="" src="confusion.png">
-</p>
 
-In this very basic example there are two possible predicted classes: "yes" and "no". We could imagine this classifier might be predicting the presence of a disease where "yes" means that a patient has the disease.
+
+In this very basic example there are two possible predicted classes: "benign" and "not benign".
 
 What can we learn from this matrix?
-* This classifier made a total of 165 predictions (e.g., 165 patients were being tested for the presence of that disease).
-* Out of those 165 cases, the classifier predicted "yes" 110 times, and "no" 55 times.
-* In reality, 105 patients in the sample have the disease, and 60 patients do not.
+* This classifier made a total of 165 predictions (e.g., 165 breast cancer images were tested).
+* Out of those 165 cases, the classifier predicted "benign" 110 times, and "not benign" 55 times.
+* In reality, 105 images were of benign tumors, and 60 images were of tumors that are not benign.
 
 Confusion matrix terminology:
-* true positives (TP): These are cases in which we predicted yes (they have the disease), and they do have the disease.
-* true negatives (TN): We predicted no, and they don't have the disease.
-* false positives (FP): We predicted yes, but they don't actually have the disease. (Also known as a "Type I error.")
-* false negatives (FN): We predicted no, but they actually do have the disease. (Also known as a "Type II error.")
+* true positives (TP): These are cases in which we predicted benign, and the image is of a benign tumor.
+* true negatives (TN): We predicted not benign, and the image is of a tumor that is not benign.
+* false positives (FP): We predicted benign, but the image is of a tumor that is not benign. (Also known as a "Type I error.")
+* false negatives (FN): We predicted not benign, but the image is of a tumor that is benign. (Also known as a "Type II error.")
 
 There are many different metrics that can be derived from a confusion matrix. Two of the most basic metrics are *accuracy* and the *error rate* of a classifier.
 * Accuracy: A measure of how often the machine guesses correctly
@@ -221,8 +197,9 @@ There are many different metrics that can be derived from a confusion matrix. Tw
 * Error rate: A measure of how often the machine guesses incorrectly
   * `(FP+FN)/total = (10+5)/165 = 0.09`
   * Equivalent to `1 - Accuracy`
-
-You could further interrogate the above problem by evaluating the sensitivity of the algorithm. Sensitivity measures the true positive rate and would show that the algorithm has 100% sensitivity for cat pictures and 0% sensitivity for dog pictures.
+  
+>#### Note!
+>This is an example of using a confusion matrix with a binary classifier, but you can easily expand a confusion matrix to evaluate multiclass classifiers.
 
 ### Regression
 
@@ -230,55 +207,47 @@ You could further interrogate the above problem by evaluating the sensitivity of
   <img width="400" alt="" src="images/regression.jpg">
 </p>
 
-Regression is a form of supervised learning that predicts a continuous numerical value. 
-* Linear regression: Aims to draw a straight best fit line through a field of data points. 
-* Polynomial regression: Aims to draw a curved best fit line through a field of data points.
+Regression is a form of supervised learning that predicts a continuous numerical value by fitting a line or a curve to the data points. When the algorithm fits a straight line to the data we call this a linear regression. If an algoithm fits a curved line to the data we call it a polynomial regression. 
 
-### Linear regression (AKA ordinary least squares)
+There are different algorithms to fit linear or polynomial lines to data. *Ordinary least squares* and *Ridge regression* are two different kinds of regression methods. These methods differ in which metric they use to optimize their best fit line. We will cover ordinary least squares going forward since it is one of the simplest regression methods.
+
+### Ordinary least squares (OLS) regression
 
 <p align="center">
   <img width="400" alt="" src="images/meansqerror.png">
 </p>
 
-This is the most simple form of regression. The linear regression aims to fit a straight line onto the data that minimizes the mean squared error between the predicted value and the true output value. The mean squared error is the sum of the squared differences between the predictions and the true values, divided by the number of samples.
+The OLS regression aims to fit a straight line onto the data that minimizes the mean squared error between the predicted value and the true output value. The mean squared error is the sum of the squared differences between the predictions and the true values, divided by the number of samples.
 
-You can also use polynomials to model curvature and interaction effects.
-
-Ordinary least squares regressions are very sensitive to outliars!
+Ordinary least squares regressions, like many other kinds of linear regressions, are very sensitive to outliars!
 
 ### Testing a regression algorithm
 
 Similarly to classification algorithms, there are many different metrics that can be used when testing and tuning a regression algorithm.
 
-Some common choices include:
-* Mean Squared Error (MSE)
+R Squared (R^2) is one of the simplest evaluations of a regression. 
+* R squared is a very basic indicator of 'goodness of fit'. It measures how well the regressions predictions approximate the real data points. An R squared of 1 indicates a perfect fit and an R squared of 0 indicates no correlation whatsoever.
+
+Mean squared error (MSE) is another common evaluator
+* Here the average squared value of the difference between estimated values and actual values. It measures the quality of the estimator. MSE is always a non-zero number and the closer to zero it is the better the fit.
+
+Some other choices include:
 * Root Mean Squared Error (RMSE)
 * Mean Absolute Error (MAE)
-* R Squared (R²)
 * Adjusted R Squared (R²)
 * Mean Square Percentage Error (MSPE)
 * Mean Absolute Percentage Error (MAPE)
 * Root Mean Squared Logarithmic Error (RMSLE)
 
-Which metric you will use will be highly dependent on the context in which you're evaluating your algorithm.
+Which metric you will use will be highly dependent the algorithm and context of the analysis.
 
-#### R Squared (R^2) is one of the simplest evaluations of a regression
-
-R squared is a very basic indicator of 'goodness of fit'. It measures how well the regressions predictions approximate the real data points. An R squared of 1 indicates a perfect fit and an R squared of 0 indicates no correlation whatsoever.
-
-#### Mean squared error (MSE) is another common evaluator
-
-Here the average squared value of the difference between estimated values and actual values. It measures the quality of the estimator. MSE is always a non-zero number and the closer to zero it is the better the fit.
-
-### Practice with problem statements
-
-## Wrap up
+## Wrapping up
 
 Today, we covered some of the main topics of supervised learning. We discussed the importance of data collection, dove into classification methods like decision trees and different kinds of regression methods, and practiced writing supervised learning problem statements. For more in depth information check out the optional materials below. Specifically the Visual intro to Machine Learning has a great visualization of how decision trees work.
 
 Next class we will review concepts from the first two classes and cover unsupervised machine learning methods for clustering and dimensionality reduction.
 
-### Reading materials
+## Extra materials
 
 [Yee, S., &amp; Chu, T. (2015). A visual introduction to machine learning. Retrieved June 22, 2020, from http://www.r2d3.us/visual-intro-to-machine-learning-part-1/](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/)
 * An animated, scrolling walkthrough of a decision tree.

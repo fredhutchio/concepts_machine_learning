@@ -14,28 +14,15 @@ By the end of this class you should be able to:
 * Understand basic applications of unsupervised learning (PCA, Kmeans)
 * Create unsupervised learning problem statements
 
-### Review! What is machine learning?
+### Review of last class
 
 Machine learning is a:
 * field of study within the larger field of artificial intellegence
-* way of programming computers
 * an algorithm that incorporates large datasets into a statistical model and improves with experience
-
-### Review! When to use machine learning
-
-Machine learning is especially good at tackeling problems where **you cannot code the rules** and **you cannot scale**.
-
-Some examples we've talked about are:
-* Classifying emails as spam
-* Recognizing hand written letters
-* Predicting a patients clinical outcome
-* Clustering cells by cell type based on genetic data
-
-### Review! Anatomy of a machine learning problem
 
 **Example: we are trying to cluster patients to find if there are novel subgroupings within the dataset**
 
-Here we are looking at the exact same example dataset as last class. You'll notice that our intended outcome is slightly different than when we were using the dataset for supervised learning. Instead of predicting whether or not a patient is likely to be diagnosed with cardiovascular disease we want to explore the data for underlying patterns.
+Here we are looking at the exact same example dataset as the first class. You'll notice that our intended outcome is slightly different than when we were using the dataset for supervised learning. Instead of predicting whether or not a patient is likely to be diagnosed with cardiovascular disease we want to explore the data for underlying patterns.
 
 | patient_Id    | age   | htn | treat | smoking | race     | t2d | gender | numAge | bmi | tchol| sbp | cvd |
 | ------------- | ----- | --- | ----- | ------- | -------- | --- | ------ | ------ | --- | ---- | --- | --- |
@@ -70,7 +57,7 @@ There are two kinds of supervised learning that we will talk about today:
 1. Unsupervised transformations: Create a new representation of a complex dataset that is easier to understand than the original.
 2. Clustering: Partition data into distinct groups of similar objects.
 
-### Some basic examples of supervised machine learning
+### Some basic examples of unsupervised machine learning
 
 #### Clustering similar images
 
@@ -113,6 +100,15 @@ The main challenge of unsupervised learning is that it can be difficult to tell 
 
 Consider the above output from a dimensionality reduction method called t-Distributed Stochastic Neighbor Embedding (t-SNE). Here we are automatically clustering cells based on their RNA-sequencing results. You'll notice that while each cluster is uniquely colored we are given no information about why they are clustered this way other than the machine picked up some underlying pattern in their RNA-sequencing results. It is up to the investigator to further interrogate these clusters to figure out if there is a meaningful difference between these clusters.
 
+One way to derive meaning from these clusters is to apply labels after the fact and see if there are any patterns in the visualization. Lets take a look at an example of this below.
+
+<p align="center">
+  <img src="images/seurat.png" width="350" />
+  <img src="images/seurat2.png" width="350" /> 
+</p>
+
+Here we have a PCA of single-cell RNA-sequencing samples from the analysis package [Seurat](https://satijalab.org/seurat/). On the left, all the data points are labled as `10X_PBMC`. This denotes that all of these cells are peripheral blood mononuclear cells sequenced with 10X Genomics sequencer. On the right we have the exact same PCA plot, but the points are labeled based on how highly they are expressing the gene `MS4A1`. This might be a gene of high importance to the researcher and the fact that there is a cluster of cells expressing this gene highly might have some significance. Again, further investigation is required to make any quantitative statements about this.
+
 ### When to use unsupervised learning
 
 Due to the challenges we discussed above, unsupervised learning is generally used in an exploratory step of analysis. 
@@ -127,8 +123,6 @@ Common applications of unsupervised learning:
 * Clustering is the organization of unlabled data into groups (clusters) based on how similar they are. 
 * Clustering is a task that can be accomplished by various algorithms that differ in how they understand what constitutes a cluster and how they find clusters.
 * *centroid based clustering* and *hierarchical clustering* are two different types of clustering.
-
-#### Hard vs soft clustering
 
 ### Connectivity-based clustering (heirarchical)
 
@@ -149,20 +143,88 @@ These algorithms connect "objects" to form "clusters" based on their [distance](
 
 ### Centroid-based clustering
 
+These algorithms work by finding the specified number of centroids within the dataset. A centroid is the geometric center of a shape. These algorithms generally require that the analyst tell the machine how many clusters to look for.
 
+### K-means clustering
 
-### The curse of dimensionality
+K-means clustering is one of the most simple and commonly used clustering algorithms. It works by finding "cluster centers" that represent certain regions of the data. The algorithm knows how many clusters to look for because the analyist will specify it as a paremeter. 
+
+#### A walkthrough of K-means clustering
+
+<p align="center">
+  <img width="500" alt="" src="images/kmeans.png">
+</p>
+
+* Cluster centers are shown as triangles
+* Data points are shown as circles
+* Colors indicate cluster membership. 
+  * The analyst specified three clusters, so the algorithm was initialized by declaring three data points randomly as cluster centers (see “Initialization”).
+* Then the iterative algorithm starts.
+  * First, each data point is assigned to the cluster center it is closest to (see “Assign Points (1)”).
+  * Next, the cluster centers are updated to be the mean of the assigned points (see “Recompute Centers (1)”).
+  * Then the process is repeated two more times. 
+  * After the third iteration, the assignment of points to cluster centers remained unchanged, so the algorithm stops.
+
+#### Challenges with K-means clustering
+
+K-means clusters are defined solely by its center. This means that each cluster is a convex, or circular, shape. As a result, k-means is limited to capturing relatively simple shapes. It's also worth noting that k-means assumes that all clusters have the same "diameter" and always draws the boundary between clusters to be exactly in the middle between the cluster centers.
+
+<p align="center">
+  <img width="500" alt="" src="images/kmeansFail.png">
+</p>
+
+Above is an example case where k-means fails to capture two obvious clusters.
+
+### Unsupervised transformations
+
+Algorithms that do unsupervised transformations of a dataset create a new representation of the data that is easier for humans or other algorithms to understand compared to the original representation. A very common application of this is dimensionality reduction. This is when a high-dimensional representation of the data, consisting of many features, is represented in a way that summerizes the essential characteristics with fewer features. Dimensionality reduction is commonly used to reduce a highly dimensional dataset to two dimensions for visualization purposes.
+
+Unsupervised transformations can also be used to find parts or components that make up the data. An example of this is topic extraction on a collection of text documents. The task here is to find out which topics are discussed in each document. This can be used to track discussion of themes like elections or pop-stars on social media.
 
 ### Dimensionality reduction
 
+As mentioned previously, dimensionality reduction's most common motivation is visualization, compressing the data, and finding a representation that is more informative for further processing. 
+
+One of the simplest and most widely used algorithms for all of these is principal component analysis. Other methods are non-negative matrix factorization (NMF), which is commonly used for feature extraction, and t-SNE, which is commonly used for visualization using two-dimensional scatter plots.
+
 ### Principle componant analysis (PCA)
 
-### Evaluation and interpretation of unsupervised learning methods
+Principal component analysis is a method that rotates the dataset in a way such that the rotated features are statistically uncorrelated. This rotation is often followed by selecting only a subset of the new features, according to how important they are for explaining the data.
 
-### Review!
+#### PCA is most often used to visualize high-dimensional datasets. 
 
-### Next Class
+It's very easy to visualize and make sense of 2-dimensional data. You might plot weight against height or miles per gallon against car price to gain some insight on how those two variables correlate. This becomes tricky when datasets have more than two variables. You might be able to visualize dataset with less than ten variables using a [pair plot]() to gain some insight. Pair plots work by giving us a partial picture of the data by showing us all the possible combinations of two features. This kind of visualization doesn't scale. Imagine a relatively small dataset with 30 features. A pair plot of this dataset would result in 435 different scatter plots. We'd never be able to look at this plot in detail and make sense of it.
 
-### Reading
+#### A walkthrough of PCA
+
+<p align="center">
+  <img width="500" alt="" src="images/pca.png">
+</p>
+
+**The first plot (top left) shows the original data points, colored to distinguish among them.**
+* First, the algorithm finds the direction of maximum variance, labeled "Component 1".
+  * This is the direction (or vector) in the data that contains the most information.
+* Then the algorithm finds the direction that contains the most information while being at a right angle to the first direction.
+  * In 2-dimensional space there is only one possible orientation of a right angle.
+  * In highly dimensional space there would be an infinite number of possible right angles.
+* The directions found during this process are called principal components. They are the main directions of variance in the data.
+* Generally, there are as many principal components as original features in the dataset.
+
+**The second plot (top right) shows the same data, but now rotated so that the first principal component aligns with the x-axis and the second principal component aligns with the y-axis.**
+This is a PCA plot of the first and second principal components.
+
+**The third plot (bottom left) shows how we might use PCA by retaining only some of the principal components.**
+This plot reduces the data from a two-dimensional dataset to a one-dimensional dataset. Note, that instead of keeping only one of the original features, we found the most interesting direction (top left to bottom right in the first panel) and kept this direction, the first principal component.
+
+**In the last panel (bottom right) we undo the rotation and add the mean back to the data**
+These points are in the original feature space, but we kept only the information contained in the first principal component. This transformation is sometimes used to remove noise effects from the data or visualize what part of the information is retained using the principal components.
+
+## Wrapping up
+
+Today, we dug deeper into what unsupervised machine learning is and when it can be applied. We touched on both heirarchical and centroid-based clustering and principal component analysis for dimensionality reduction.
+
+Next class, is focused on exploratory data analysis and ethics in machine learning. These are crucial steps to setting up a successful machine learning application.
+
+## Extra Materials
 
 https://idyll.pub/post/dimensionality-reduction-293e465c2a3443e8941b016d/

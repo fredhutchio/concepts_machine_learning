@@ -8,10 +8,10 @@ This four week course is designed to introduce attendees to central concepts in 
 
 ## Schedule
 
-- Class 1: Introduction and Conceptual Overview of Machine Learning Concepts
-- Class 2: Supervised Learning via Regression and Classification
-- Class 3: Unsupervised Learning via Dimensionality Reduction and Clustering
-- Class 4: Experimental Design and Ethics in the Machine Learning Process
+- [Class 1:](./class1.md) Introduction and Conceptual Overview of Machine Learning Concepts
+- [Class 2:](./class2.md) Supervised Learning via Regression and Classification
+- [Class 3:](./class3.md) Unsupervised Learning via Dimensionality Reduction and Clustering
+- [Class 4:](./class4.md) Experimental Design and Ethics in the Machine Learning Process
 
 ## Resources
 
