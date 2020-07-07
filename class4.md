@@ -67,7 +67,7 @@ This step is especially important in cases where you did not create your own dat
 For this dataset I had to google a few of the column headers to understand what they meant. Here are some examples of my google searches that turned up the results I was looking for:
 * `htn`
 * `t2d`
-* `sbp heart'
+* `sbp heart`
  * initially searched `sbp` but google gave me information about the Seattle Bouldering Project which I knew couldn't be correct.
 
 **Investigate the data types in the data set.**
