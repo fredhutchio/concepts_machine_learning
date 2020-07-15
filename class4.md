@@ -138,19 +138,33 @@ The simplest form of feature engineering is combining categorical features. This
 
 
 ### Ethics in machine learning
+* Define ethics
+* Introduce the idea that research and tech are not 'neutral' or 'unbiased'
 
-* what do we mean by ethics?
-* general ethical concerns of machine learning algorithms
+### Replicating biases
+* More focus on creating ethical algorithms these days, but there also needs to be focus on identifying biases in data, features, and inferences that we make
+* ML algorithms learn from datasets but what happens when biases are baked into the dataset?
+* Having a deep understanding of how biases play out in the real world can help ID this
+  * ex: understanding that when using policing data for prediction it may say more about the nature of policing than the people who are criminalized by the system.
+  
+### What happens when the machine guesses wrong?
+* Machines are not perfect - error is unavoidable
+* Need to deeply consider the impact of when the machine is wrong
+* We are using ML to determine who gets loans, government assistance, and even the length of criminal sentenceing the consequences of the machine being wrong are HUGE
+* Human review of machine decisions is vital
 
-* Replicating biases
- * ML algorithms learn from datasets but what happens when biases are baked into the dataset?
- * Need a good example here
-* Missing data
-* Intent behind design
- * Bellmont Report
- * Basically - even if we can do it SHOULD we
- * Examples: ml to identify "criminals"/etc based on facial features. Getting close to eugenics here.
-* Take into account possible malevolent uses, interpretations
+### Machine learning applications are not naturally transparent
+* ML can be used like a black box
+* If we don't know how the machine is making decisions how can we know it's not making biased or wrong decisions?
+* Reproducibility is difficult
+* Thourough documentation is vital
+
+### Data security
+* ML applications require TONS of data.
+* Often times this data may contain personal information
+* Even when using metadata or data that may seem innocuous we need to carefully consider how this data could reveal sensitive info 
+* Ex: cambridge analytica scandle
+
 
 ### Wrapping up
 
@@ -161,6 +175,7 @@ If you have some coding experience and want to practice setting up your first mo
 * [Practice setting up a machine learning model in R with TidyModels](https://www.tidymodels.org/start/models/)
 
 https://medium.com/@CoalitionForCriticalTechnology/abolish-the-techtoprisonpipeline-9b5b14366b16
+https://www.nature.com/articles/d41586-020-00160-y
 
 ### Closing
 
